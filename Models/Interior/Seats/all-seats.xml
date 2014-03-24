@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Left -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -8.96944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -8.16944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -7.36944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -6.56944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -5.76944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -4.96944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -4.16944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -3.36944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -2.56944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -1.76944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m> -0.96944 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  0.33056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  1.13056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  1.93056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  2.73056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  3.53056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  4.33056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatL.xml</path>
+    <offsets>
+      <x-m>  5.13056 </x-m>
+      <y-m> -0.75091 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Right interior -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -7.36944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -6.56944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -5.76944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -4.96944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -4.16944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -3.36944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -2.56944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -1.76944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -0.96944 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  0.33056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  1.13056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  1.93056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  2.73056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  3.53056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  4.33056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  5.13056 </x-m>
+      <y-m>  0.25090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Right interior -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -7.36944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -6.56944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -5.76944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -4.96944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -4.16944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -3.36944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -2.56944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -1.76944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m> -0.96944 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  0.33056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  1.13056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  1.93056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  2.73056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  3.53056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  4.33056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seatR.xml</path>
+    <offsets>
+      <x-m>  5.13056 </x-m>
+      <y-m>  0.75090 </y-m>
+      <z-m> -0.78946 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>

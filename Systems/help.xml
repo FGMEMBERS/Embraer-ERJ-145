@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>Embraer ERJ 145</title>
+  <key>
+    <name>d</name>
+    <desc>Open/Close door</desc>
+  </key>
+  <key>
+    <name>Delete</name>
+    <desc>toggle thrust reversers</desc>
+  </key>
+  <key>
+    <name>j/k</name>
+    <desc>Spoilers</desc>
+  </key>
+  
+</PropertyList>
