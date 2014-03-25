@@ -31,6 +31,10 @@
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
+    <object-name>slatG1</object-name>
+    <object-name>slatG2</object-name>
+    <object-name>slatD1</object-name>
+    <object-name>slatD2</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG1</object-name>
@@ -55,6 +59,8 @@
     <object-name>porteAD</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
+    <object-name>contourvitres</object-name>
+    <object-name>aoa</object-name>
     
     <object-name>trous</object-name>
     <object-name>axeAH</object-name>
@@ -77,6 +83,10 @@
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
+    <object-name>slatG1</object-name>
+    <object-name>slatG2</object-name>
+    <object-name>slatD1</object-name>
+    <object-name>slatD2</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG1</object-name>
@@ -101,6 +111,8 @@
     <object-name>porteAD</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
+    <object-name>contourvitres</object-name>
+    <object-name>aoa</object-name>
     
     <object-name>trous</object-name>
     <object-name>axeAH</object-name>
@@ -129,6 +141,10 @@
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
+    <object-name>slatG1</object-name>
+    <object-name>slatG2</object-name>
+    <object-name>slatD1</object-name>
+    <object-name>slatD2</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
     <object-name>voletG1</object-name>
@@ -153,6 +169,8 @@
     <object-name>porteAD</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
+    <object-name>contourvitres</object-name>
+    <object-name>aoa</object-name>
   </effect>
 
   <!-- working for Rembrandt -->
@@ -381,7 +399,109 @@
       <z2-m> -1.20543 </z2-m>
     </axis>
   </animation>
+
+  <!-- Animation des bords d'attaque -->  
+  <animation>
+    <name>AllSlats</name>
+    <object-name>slatG1</object-name>
+    <object-name>slatG2</object-name>
+    <object-name>slatD1</object-name>
+    <object-name>slatD2</object-name>
+  </animation>
   
+  <animation>
+    <type>translate</type>
+    <object-name>AllSlats</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 0.49 </ind><dep> -0.1 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> -0.1 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>slatG1</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.49 </ind><dep> -20 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> -20 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.49093 </x1-m>
+      <y1-m> -3.63672 </y1-m>
+      <z1-m> -1.54397 </z1-m>
+      <x2-m> -1.54959 </x2-m>
+      <y2-m> -1.32167 </y2-m>
+      <z2-m> -1.73697 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>slatG2</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.49 </ind><dep> -20 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> -20 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  2.41486 </x1-m>
+      <y1-m> -9.68167 </y1-m>
+      <z1-m> -1.18765 </z1-m>
+      <x2-m> -0.49093 </x2-m>
+      <y2-m> -3.63672 </y2-m>
+      <z2-m> -1.54397 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>slatD1</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.49 </ind><dep> -20 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> -20 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.54959 </x1-m>
+      <y1-m>  1.32167 </y1-m>
+      <z1-m> -1.73697 </z1-m>
+      <x2-m> -0.49093 </x2-m>
+      <y2-m>  3.63672 </y2-m>
+      <z2-m> -1.54397 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>slatD2</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.49 </ind><dep> -20 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> -20 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.49093 </x1-m>
+      <y1-m>  3.63672 </y1-m>
+      <z1-m> -1.54397 </z1-m>
+      <x2-m>  2.41486 </x2-m>
+      <y2-m>  9.68167 </y2-m>
+      <z2-m> -1.18765 </z2-m>
+    </axis>
+  </animation>
+  
+  <!-- Animation des volets -->  
   <animation>
     <type>rotate</type>
     <object-name>voletG1</object-name>

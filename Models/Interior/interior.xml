@@ -13,6 +13,7 @@
     <object-name>intporte2</object-name>
     <object-name>portebagage</object-name>
     <object-name>cloisons</object-name>
+    <object-name>intcontourvitres</object-name>
     
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>

@@ -93,13 +93,22 @@
         <control-speed control="FLAP0" transition-time="10"/>
   </wing>
 
+  <mstab x="-3.14328" y="9.98257" z="-1.14945"
+         chord="0.9"
+         length="1.1"
+         taper="0.50"
+         sweep="25"
+         dihedral="78">
+         <stall aoa="20" width="1" peak="1.5"/>
+  </mstab>
+
   <hstab x="-13.06474" y="0" z="3.11266"
          chord="1.937" 
          length="3.9" 
          taper="0.6"
          sweep="14">
          <stall aoa="18" width="1" peak="1.5"/>
-         <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
+         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
          <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
