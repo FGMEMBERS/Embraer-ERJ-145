@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Source : http://cdn-www.airliners.net/aviation-photos/photos/0/0/8/1184800.jpg -->
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- PEDESTAL -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Pedestal/pedestal.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.173 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- PFD -->
+  <model>
+    <name>PFD1</name>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/pfd3d.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.495 </y-m>
+      <z-m> -0.025 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>PFD1</name>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/pfd3d.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.495 </y-m>
+      <z-m> -0.025 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- MFD -->
+  <model>
+    <name>MFD1</name>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/mfd3d.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.305 </y-m>
+      <z-m> -0.025 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>MFD1</name>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/mfd3d.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.305 </y-m>
+      <z-m> -0.025 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- EICAS -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/eicas/eicas.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.025 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>

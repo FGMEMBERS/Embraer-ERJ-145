@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>pedestal.ac</path>
+  
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>pedestal</object-name>
+    <object-name>trouspedestal</object-name>
+    <object-name>throttleG</object-name>
+    <object-name>throttleD</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Pedestal/Instruments/cdu/cdu.xml</path>
+    <offsets>
+      <x-m>  0.088 </x-m>
+      <y-m> -0.075 </y-m>
+      <z-m> -0.051 </z-m>
+      <pitch-deg> -61 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Pedestal/Instruments/cdu/cdu1.xml</path>
+    <offsets>
+      <x-m>  0.088 </x-m>
+      <y-m>  0.075 </y-m>
+      <z-m> -0.051 </z-m>
+      <pitch-deg> -61 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Pedestal/Instruments/rmu/rmu1.xml</path>
+    <offsets>
+      <x-m>  0.264 </x-m>
+      <y-m> -0.095 </y-m>
+      <z-m> -0.112 </z-m>
+      <pitch-deg> -90 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Pedestal/Instruments/rmu/rmu2.xml</path>
+    <offsets>
+      <x-m>  0.264 </x-m>
+      <y-m>  0.095 </y-m>
+      <z-m> -0.112 </z-m>
+      <pitch-deg> -90 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>throttleG</object-name>
+    <property>controls/engines/engine/throttle</property>
+    <factor> 105 </factor>
+    <center>
+      <x-m>  0.42737 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.13768 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>throttleD</object-name>
+    <property>controls/engines/engine[1]/throttle</property>
+    <factor> 105 </factor>
+    <center>
+      <x-m>  0.42737 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.13768 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>
