@@ -27,9 +27,20 @@
     </unload>
   </nasal>
   
+<model>
+<name>Pushback</name>
+<path>Models\Airport\Pushback\Goldhofert.xml</path>
+<offsets>
+<x-m>-13.00</x-m>
+<y-m>0</y-m>
+<z-m>-3</z-m>
+</offsets>
+</model>
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
+    <object-name>cargo</object-name>
     <object-name>ailes</object-name>
     <object-name>slatG1</object-name>
     <object-name>slatG2</object-name>
@@ -82,6 +93,7 @@
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
+    <object-name>cargo</object-name>
     <object-name>ailes</object-name>
     <object-name>slatG1</object-name>
     <object-name>slatG2</object-name>
@@ -136,10 +148,10 @@
       <blue-prop>specular/blue</blue-prop>
     </specular>
   </animation>
-
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
+    <object-name>cargo</object-name>
     <object-name>ailes</object-name>
     <object-name>slatG1</object-name>
     <object-name>slatG2</object-name>
@@ -196,6 +208,7 @@
   
   <!-- Intérieur -->
   <model>
+    <usage>interior</usage>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/interior.xml</path>
   </model>
   
@@ -327,7 +340,7 @@
     <type>rotate</type>
     <object-name>direction</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor> 15 </factor>
+    <factor> -15 </factor>
     <axis>
       <x1-m> 12.03980 </x1-m>
       <y1-m>  0.00000 </y1-m>
@@ -771,6 +784,39 @@
     </axis>
   </animation>
 
+  <!-- Cargo door -->
+  <animation>
+    <type>pick</type>
+    <object-name>cargo</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.cargo.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cargo</object-name>
+    <property>sim/model/door-positions/cargo/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 80 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  7.08497 </x1-m>
+      <y1-m> -1.11229 </y1-m>
+      <z1-m> -0.35925 </z1-m>
+      <x2-m>  7.63920 </x2-m>
+      <y2-m> -1.09192 </y2-m>
+      <z2-m> -0.35941 </z2-m>
+    </axis>
+  </animation>
+  
   <!-- Animation des portes --> 
   <animation>
     <type>rotate</type>
@@ -890,7 +936,7 @@
       <entry><ind> 1 </ind><dep>  0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  1.66239 </x-m>
+      <x-m> 1.66239 </x-m>
       <y-m> -2.05361 </y-m>
       <z-m> -1.52608 </z-m>
     </center>
@@ -1164,6 +1210,30 @@
       <x-m>  2.92288 </x-m>
       <y-m>  9.97616 </y-m>
       <z-m> -1.15364 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Light cone left -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m>         -1.79297 </x-m>
+      <y-m>         -1.22778 </y-m>
+      <z-m>         -1.82797 </z-m>
+      <pitch-deg>   -7.50000 </pitch-deg>
+      <heading-deg> -5.00000 </heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- Light cone right -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m>        -1.79297 </x-m>
+      <y-m>         1.22778 </y-m>
+      <z-m>        -1.82797 </z-m>
+      <pitch-deg>  -7.50000 </pitch-deg>
+      <heading-deg> 5.00000 </heading-deg>
     </offsets>
   </model>
   

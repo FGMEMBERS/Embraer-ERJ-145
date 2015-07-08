@@ -62,8 +62,12 @@
     <object-name>MFD.hdg</object-name>
     <object-name>MFD.bug</object-name>
     <object-name>MFD.ete</object-name>
+    <condition>
+      <property>controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
     <emission>
-      <!-- <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop> -->
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
