@@ -2,201 +2,33 @@
 
 <PropertyList>
 
-  <mk-viii>                                            <!-- http://wiki.flightgear.org/index.php/GPWS -->
-    <serviceable>true</serviceable>                    <!-- EGPWS_ENABLE -->
-    <configuration-module>
-      <category-1>   1 </category-1>                   <!-- AIRCRAFT_MODE_TYPE_SELECT -->
-      <category-8>                                     <!-- RADIO_ALTITUDE_INPUT_SELECT -->
-        3                                              <!-- YASim --> 
-      </category-8>
-    </configuration-module>
-    <inputs>                                           <!-- Module I/O -->
-      <arinc429>
-        <decision-height-ncd> false </decision-height-ncd>
-        <decision-height> 250 </decision-height>
-      </arinc429>
-    </inputs>
-    <speaker>
-      <volume>0.4</volume>
-    </speaker>
-  </mk-viii>
-  
-  <tcas>
-    <serviceable type="bool">true</serviceable>
-    <inputs>
-      <mode type="int">0</mode>                        <!-- 0=off, 1=standby, 2=TA-only, 3=auto(TA/RA) -->
-    </inputs>
-    <!--voice>
-    <file-prefix type="string">Sounds/tcas/</file-prefix>
-    </voice-->
-    <speaker>                                          <!-- Speaker Configuration -->
-      <max-dist type="double">7</max-dist>             <!-- Max. distance where speaker is heard -->
-      <reference-dist type="double">5</reference-dist> <!-- Distance to pilot -->
-      <volume type="double"> 1 </volume>               <!-- Volume at reference distance -->
-    </speaker>
-    <range type="int">6</range>
-  </tcas>
-  
-  <nd>
-    <radar-texture-path type="string">Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/radar.png</radar-texture-path>
-    <symbol-texture-path type="string">Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/symbols.png</symbol-texture-path>
-    <font>
-      <color>
-        <red type="float">0.7</red>
-        <green type="float">0.7</green>
-        <blue type="float">0.7</blue>
-        <alpha type="float">1</alpha>
-      </color>
-      <name type="string">helvetica_bold.txf</name>
-      <size type="float">14</size>
-      <line-spacing type="float">0.01</line-spacing>
-    </font>
-    <serviceable type="bool">true</serviceable>
-    <range type="int" archive="y">100</range>
-    <aircraft-heading-up type="bool">true</aircraft-heading-up>
-    <heading-up-deg type="float">0.01</heading-up-deg>
-    <x-center type="float">0.5</x-center>
-    <y-center type="float">0.5</y-center>
-    <display>
-      <arpt type="bool">1</arpt>
-      <vor type="bool">1</vor>
-      <fix type="bool">0</fix>
-      <tcas type="bool">0</tcas>
-    </display>
-    <line-width type="double">3</line-width>
-  </nd>
-  
-  <tcas-display>
-    <radar-texture-path type="string">Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/tcas-display.png</radar-texture-path>
-    <symbol-texture-path type="string">Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/symbols.png</symbol-texture-path>
-    <font>
-      <color>
-        <red type="float">0.7</red>
-        <green type="float">0.7</green>
-        <blue type="float">0.7</blue>
-        <alpha type="float">1</alpha>
-      </color>
-      <name type="string">helvetica_bold.txf</name>
-      <size type="float">14</size>
-      <line-spacing type="float">0.01</line-spacing>
-    </font>
-    <serviceable type="bool">true</serviceable>
-    <range type="int" archive="y">6</range>
-    <aircraft-heading-up type="bool">true</aircraft-heading-up>
-    <heading-up-deg type="float">0.01</heading-up-deg>
-    <x-center type="float">0.5</x-center>
-    <y-center type="float">0.5</y-center>
-    <display>
-    </display>
-    <line-width type="double">3</line-width>
-  </tcas-display>
-  
-  <alerts>
-    <gear-horn type="bool">0</gear-horn>
-    <master-warning type="bool">0</master-warning>
-    <master-caution type="bool">0</master-caution>
-  </alerts>
-  
-  <rmu>
-    <unit n="0">
-      <serviceable type="bool">1</serviceable>
-      <selected type="int">0</selected>
-      <selected-xoffset type="int">0</selected-xoffset>
-      <selected-yoffset type="int">0</selected-yoffset>
-      <com-num type="int">0</com-num>
-      <nav-num type="int">0</nav-num>
-      <adf-num type="int">0</adf-num>
-    </unit>
-    <unit n="1">
-      <serviceable type="bool">1</serviceable>
-      <selected type="int">0</selected>
-      <selected-xoffset type="int">0</selected-xoffset>
-      <selected-yoffset type="int">0</selected-yoffset>
-      <com-num type="int">1</com-num>
-      <nav-num type="int">1</nav-num>
-      <adf-num type="int">1</adf-num>
-    </unit>
-  </rmu>
-  
-  <airspeed-indicator>primus-1000/
-    <index n="0" type="double">100</index>
-    <index n="1" type="double">120</index>
-    <ias-limit>350.2000.00</ias-limit>
-    <mach-limit>0.85</mach-limit>
-    <alt-threshold>8000.0</alt-threshold>
-  </airspeed-indicator>
-  
-  <kr-87>
-    <inputs>
-      <audio-btn>0</audio-btn>
-    </inputs>
-  </kr-87>
-  
-  <primus2000>
-    <dc840>
-      <hsi type="bool">0</hsi>
-      <wx type="bool">0</wx>
-      <et type="bool">0</et>
-      <tcas type="bool">0</tcas>
-      <acft-sys type="bool">0</acft-sys>
-      <mfd-map type="bool">1</mfd-map>
-      <mfd-wx type="bool">0</mfd-wx>
-      <norm type="bool">0</norm>
-      <abn type="bool">0</abn>
-      <emer type="bool">0</emer>
-      <skp type="bool">0</skp>
-      <pag type="bool">0</pag>
-      <rcl type="bool">0</rcl>
-      <ent type="bool">0</ent>
-    </dc840>
-    <sc840>
-      <nav1ptr type="double">0</nav1ptr>
-      <nav2ptr type="double">0</nav2ptr>
-    </sc840>
-    <eicas>
-      <serviceable type="bool">1</serviceable>
-    </eicas>
-    <mfd>
-      <menu-num ty2000.0pe="int">0</menu-num>
-    </mfd>
-    <pfd>
-    </pfd>
-  </primus2000>
-  
-  <cdu n="0">
-    <page type="string">PROGRESS</page>
-    <L type="string" n="0"></L>
-    <L type="string" n="1"></L>
-    <L type="string" n="2"></L>
-    <L type="string" n="3"></L>
-    <L type="string" n="4"></L>
-    <L type="string" n="5"></L>
-    <R type="string" n="0"></R>
-    <R type="string" n="1"></R>
-    <R type="string" n="2"></R>
-    <R type="string" n="3"></R>
-    <R type="string" n="4"></R>
-    <R type="string" n="5"></R>
-    <S type="string" n="0"></S>
-    <S type="string" n="1"></S>
-  </cdu>
-  
-  <cdu n="1">
-    <page type="string">ACTIVE FLT PLAN</page>
-    <L type="string" n="0"></L>
-    <L type="string" n="1"></L>
-    <L type="string" n="2"></L>
-    <L type="string" n="3"></L>
-    <L type="string" n="4"></L>
-    <L type="string" n="5"></L>
-    <R type="string" n="0"></R>
-    <R type="string" n="1"></R>
-    <R type="string" n="2"></R>
-    <R type="string" n="3"></R>
-    <R type="string" n="4"></R>
-    <R type="string" n="5"></R>
-    <S type="string" n="0"></S>
-    <S type="string" n="1"></S>
-  </cdu>
-  
+  <electrical>
+    <path></path>
+  </electrical>
+
+  <pitot>
+    <name>pitot</name>
+    <number>0</number>
+  </pitot>
+
+  <static>
+    <name>static</name>
+    <number>0</number>
+    <tau>1</tau>
+  </static>
+
+  <vacuum>
+    <name>vacuum</name>
+    <number>0</number>
+    <rpm>engines/engine[0]/fan</rpm>
+    <scale>20</scale>
+  </vacuum>
+
+  <vacuum>
+    <name>vacuum</name>
+    <number>1</number>
+    <rpm>engines/engine[1]/fan</rpm>
+    <scale>20</scale>
+  </vacuum>
+
 </PropertyList>

@@ -11,7 +11,6 @@
     <object-name>planchet</object-name>
     <object-name>intporte</object-name>
     <object-name>intporte2</object-name>
-    <object-name>intcargo</object-name>
     <object-name>portebagage</object-name>
     <object-name>cloisons</object-name>
     <object-name>intcontourvitres</object-name>
@@ -39,11 +38,6 @@
       <y-m>  -0.47000 </y-m>
       <z-m>  -0.56928 </z-m>
     </offsets>
-	        <condition>
-                <not>
-                    <property>sim/current-view/internal</property>
-                </not>        
-        </condition>
   </model>
 
   <!-- Tableau de bord -->
@@ -60,38 +54,14 @@
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/all-seats.xml</path>
   </model>
-    <animation>
-    <type>material</type>
-    <object-name>interieur</object-name>
-    <object-name>inttour</object-name>
-    <object-name>planchet</object-name>
-    <object-name>intporte</object-name>
-    <object-name>intporte2</object-name>
-    <object-name>intcargo</object-name>
-    <object-name>portebagage</object-name>
-    <object-name>cloisons</object-name>
-    <object-name>intcontourvitres</object-name>
-	<object-name>pedestal</object-name>
-	<object-name>panel</object-name>
-	    <condition>
-      <greater-than>
-        <property>/sim/time/sun-angle-rad</property>
-        <value>1.57</value>
-      </greater-than>
-    </condition>
-    <emission>
-      <red>   0.4 </red>
-      <green> 0.4 </green>
-      <blue>  0.4 </blue>
-    </emission>
-  </animation>
+
   <!-- Seat pilote -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
     <offsets>
-      <x-m> -11.0 </x-m>
-      <y-m>  -0.46 </y-m>
-      <z-m>  -0.55 </z-m>
+      <x-m> -11.14 </x-m>
+      <y-m>  -0.47 </y-m>
+      <z-m>  -0.53 </z-m>
     </offsets>
   </model>
   
@@ -99,9 +69,39 @@
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
     <offsets>
-      <x-m> -11.0 </x-m>
-      <y-m>   0.52 </y-m>
-      <z-m>  -0.55 </z-m>
+      <x-m> -11.14 </x-m>
+      <y-m>   0.47 </y-m>
+      <z-m>  -0.53 </z-m>
+    </offsets>
+  </model>
+  
+    <!-- yoke-pedals -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Yoke/L-yoke-peds.xml</path>
+    <offsets>
+      <x-m> -11.693 </x-m>
+      <y-m>   0.47 </y-m>
+      <z-m>  -1.003 </z-m>
+    </offsets>
+  </model>
+  
+    <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Yoke/R-yoke-peds.xml</path>
+    <offsets>
+      <x-m> -11.693 </x-m>
+      <y-m>   -0.47 </y-m>
+      <z-m>  -1.003 </z-m>
+    </offsets>
+  </model>
+
+   <!-- overheadpanel -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Overhead-Panel/OHpanel.xml</path>
+    <offsets>
+      <x-m> -11.19 </x-m>
+      <y-m>   0.0 </y-m>
+      <z-m>  0.257 </z-m>
+      <pitch-deg>75.0</pitch-deg>
     </offsets>
   </model>
   
@@ -175,37 +175,4 @@
     </axis>
   </animation>
 
-  <!-- Cargo door -->
-  <animation>
-    <type>pick</type>
-    <object-name>intcargo</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.cargo.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>intcargo</object-name>
-    <property>sim/model/door-positions/cargo/position-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1 </ind><dep> 80 </dep></entry>
-    </interpolation>
-    <axis>
-      <x1-m>  7.08497 </x1-m>
-      <y1-m> -1.11229 </y1-m>
-      <z1-m> -0.35925 </z1-m>
-      <x2-m>  7.63920 </x2-m>
-      <y2-m> -1.09192 </y2-m>
-      <z2-m> -0.35941 </z2-m>
-    </axis>
-  </animation>
-  
 </PropertyList>

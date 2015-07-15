@@ -1,310 +1,578 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-<fx>
-
+  <fx>
+    
     <engine>
-        <name>left engine int</name>
-        <path>Aircraft/Embraer-ERJ-145/Sounds/engine-in.wav</path>
-        <condition>
-            <and>
-                <property>sim/current-view/internal</property>
-               <not>
-                    <property>controls/engines/engine[0]/cutoff</property>
-                </not>
-            </and>
-        </condition>
-        <mode>looped</mode>
-        <pitch>
-            <property>engines/engine[0]/fan</property>
-            <offset>0</offset>
-            <factor>0.01</factor>
-        </pitch>
-        <position>
-            <x>3</x>
-            <y>1.7</y>
-            <z>0.6</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>15.0</max-dist>
+      <name>left engine</name>
+      <path>Sounds/jet.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <and>
+          <property>/engines/engine[0]/running</property>
+          <greater-than>
+            <property>/sim/current-view/view-number</property>
+            <value>0</value>
+          </greater-than>
+        </and>
+      </condition>
+      <volume>
+        <property>/engines/engine[0]/thrust-lbs</property>
+        <factor>0.0004</factor>
+        <min>0.0</min>
+        <max>0.8</max>
+      </volume>
+      <position>
+        <x>7.3</x>
+        <y>-2.1</y>
+        <z>-0.09</z>
+      </position>
     </engine>
 
-    <engine>
-        <name>right engine int</name>
-        <path>Aircraft/Embraer-ERJ-145/Sounds/engine-in.wav</path>
-        <condition>
-            <and>
-                <property>sim/current-view/internal</property>
-                <not>
-                    <property>controls/engines/engine[1]/cutoff</property>
-                </not>
-            </and>
-        </condition>
-        <mode>looped</mode>
-        <pitch>
-            <property>engines/engine[1]/fan</property>
-            <offset>0</offset>
-            <factor>0.01</factor>
-        </pitch>
-        <position>
-            <x>3</x>
-            <y>-1.7</y>
-            <z>0.6</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>15.0</max-dist>
-    </engine>
+<engine>
+<name>left n1</name>
+<path>Sounds/whine.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[0]/running</property>
+<greater-than>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</greater-than>
+</and>
+</condition>
+<volume>
+<factor>0.4</factor>
+</volume>
+<pitch>
+<property>/engines/engine[0]/n1</property>
+<factor>0.01</factor>
+<min>0.0</min>
+<max>0.8</max>
+</pitch>
+<position>
+<x>7.3</x>
+<y>-2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
 
-    <engine>
-        <name>left engine ext</name>
-        <path>Aircraft/Embraer-ERJ-145/Sounds/engine-out.wav</path>
-        <condition>
-            <and>
-                <not>
-                    <property>sim/current-view/internal</property>
-                </not>
-               <not>
-                    <property>controls/engines/engine[0]/cutoff</property>
-               </not>
-            </and>
-        </condition>
-        <mode>looped</mode>
-        <volume>
-            <property>engines/engine[0]/fan</property>
-            <factor>0.01</factor>
-        </volume>
-        <pitch>
-            <property>engines/engine[0]/fan</property>
-            <offset>0.0</offset>
-            <factor>0.01</factor>
-        </pitch>
-        <position>
-            <x>4.5</x>
-            <y>1.7</y>
-            <z>0.6</z>
-        </position>
-        <reference-dist>10.0</reference-dist>
-        <max-dist>2000.0</max-dist>
-    </engine>
+<engine>
+<name>right engine</name>
+<path>Sounds/jet.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[1]/running</property>
+<greater-than>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</greater-than>
+</and>
+</condition>
+<volume>
+<property>/engines/engine[1]/thrust-lbs</property>
+<factor>0.0004</factor>
+<min>0.0</min>
+<max>0.8</max>
+</volume>
+<position>
+<x>7.3</x>
+<y>2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
 
-    <engine>
-        <name>right engine ext</name>
-        <path>Aircraft/Embraer-ERJ-145/Sounds/engine-out.wav</path>
-        <condition>
-            <and>
-                <not>
-                    <property>sim/current-view/internal</property>
-                </not>
-                <not>
-                    <property>controls/engines/engine[1]/cutoff</property>
-                </not>
-            </and>
-        </condition>
-        <mode>looped</mode>
-        <volume>
-            <property>engines/engine[1]/fan</property>
-            <factor>0.01</factor>
-        </volume>
-        <pitch>
-            <property>engines/engine[1]/fan</property>
-            <offset>0.0</offset>
-            <factor>0.01</factor>
-        </pitch>
-        <position>
-            <x>4.5</x>
-            <y>-1.7</y>
-            <z>0.6</z>
-        </position>
-        <reference-dist>10.0</reference-dist>
-        <max-dist>2000.0</max-dist>
-    </engine>
+<engine>
+<name>right n1</name>
+<path>Sounds/whine.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[1]/running</property>
+<greater-than>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</greater-than>
+</and>
+</condition>
+<volume>
+<factor>0.4</factor>
+</volume>
+<pitch>
+<property>/engines/engine[1]/n1</property>
+<factor>0.01</factor>
+<min>0.0</min>
+<max>0.8</max>
+</pitch>
+<position>
+<x>7.3</x>
+<y>2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
 
-    <gear>
-        <name>gear</name>
-        <path>Aircraft/Embraer-ERJ-145/Sounds/gear.wav</path>
-        <property>gear/gear[0]/position-norm</property>
-        <mode>in-transit</mode>
-        <volume>
-            <property>sim/sound/volume</property>
-            <factor>0.5</factor>
-        </volume>
-        <pitch>
-            <internal>dt_play</internal>
-            <offset>0.8</offset>
-            <factor>0.001</factor>
-        </pitch>
-        <position>
-            <x>-7</x>
-            <y>0</y>
-            <z>0</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>10.0</max-dist>
-    </gear>
+<engine>
+<name>left engine inside</name>
+<path>Sounds/jet.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[0]/running</property>
+<equals>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</equals>
+</and>
+</condition>
+<volume>
+<property>/engines/engine[0]/thrust-lbs</property>
+<factor>0.0002</factor>
+<min>0.0</min>
+<max>0.3</max>
+</volume>
+<position>
+<x>7.3</x>
+<y>-2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
 
-    <gear>
-        <name>gear-lock</name>
-        <path>Sounds/gear-lck.wav</path>
-        <condition>
-            <equals>
-                <property>gear/gear[0]/position-norm</property>
-                <value>0</value>
-            </equals>
-        </condition>
-        <position>
-            <x>-7</x>
-            <y>0</y>
-            <z>0</z>
-        </position>
-        <reference-dist>2.0</reference-dist>
-        <max-dist>10.0</max-dist>
-    </gear>
+<engine>
+<name>left n1 inside</name>
+<path>Sounds/whine.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[0]/running</property>
+<equals>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</equals>
+</and>
+</condition>
+<volume>
+<factor>0.1</factor>
+</volume>
+<pitch>
+<property>/engines/engine[0]/n1</property>
+<factor>0.01</factor>
+<min>0.0</min>
+<max>1.0</max>
+</pitch>
+<position>
+<x>7.3</x>
+<y>-2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
 
-    <squeal>
-        <name>squeal</name>
-        <path>Sounds/squeal2.wav</path>
-        <condition>
-            <or>
-                <property>gear/gear[0]/wow</property>
-                <property>gear/gear[1]/wow</property>
-                <property>gear/gear[2]/wow</property>
-            </or>
-        </condition>
-        <volume>
-            <property>velocities/speed-down-fps</property>
-            <factor>0.05</factor>
-        </volume>
-        <volume>
-            <property>velocities/airspeed-kt</property>
-            <factor>0.1</factor>
-        </volume>
-        <volume>
-            <property>sim/sound/ext-volume</property>
-        </volume>
-        <pitch>
-            <property>velocities/airspeed-kt</property>
-            <factor>0.0025</factor>
-            <offset>1.5</offset>
-        </pitch>
-        <position>
-            <x>-4</x>
-            <y>0</y>
-            <z>-2</z>
-        </position>
-        <reference-dist>10.0</reference-dist>
-        <max-dist>50.0</max-dist>
-    </squeal>
+<engine>
+<name>right engine inside</name>
+<path>Sounds/jet.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[1]/running</property>
+<equals>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</equals>
+</and>
+</condition>
+<volume>
+<property>/engines/engine[1]/thrust-lbs</property>
+<factor>0.0002</factor>
+<min>0.0</min>
+<max>0.3</max>
+</volume>
+<position>
+<x>7.3</x>
+<y>2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
 
-    <rumble>
-        <name>rumble</name>
-        <mode>looped</mode>
-        <path>Aircraft/Embraer-ERJ-145/Sounds/rumble.wav</path>
-        <condition>
-            <or>
-                <property>gear/gear[0]/wow</property>
-                <property>gear/gear[1]/wow</property>
-                <property>gear/gear[2]/wow</property>
-            </or>
-        </condition>
-        <volume>
-            <property>velocities/groundspeed-kt</property>
-            <factor>0.1</factor>
-            <min>0</min>
-            <max>1</max>
-        </volume>
-        <position>
-            <x>0</x>
-            <y>0</y>
-            <z>-1</z>
-        </position>
-        <reference-dist>2.0</reference-dist>
-        <max-dist>20.0</max-dist>
-    </rumble>
+<engine>
+<name>right n1 inside</name>
+<path>Sounds/whine.wav</path>
+<mode>looped</mode>
+<condition>
+<and>
+<property>/engines/engine[1]/running</property>
+<equals>
+<property>/sim/current-view/view-number</property>
+<value>0</value>
+</equals>
+</and>
+</condition>
+<volume>
+<factor>0.1</factor>
+</volume>
+<pitch>
+<property>/engines/engine[1]/n1</property>
+<factor>0.01</factor>
+<min>0.0</min>
+<max>1.0</max>
+</pitch>
+<position>
+<x>7.3</x>
+<y>2.1</y>
+<z>-0.09</z>
+</position>
+</engine>
+
+<rumble>
+<name>rumble</name>
+<mode>looped</mode>
+<path>Sounds/rumble.wav</path>
+<condition>
+<or>
+<property>/gear/gear[0]/wow</property>
+<property>/gear/gear[1]/wow</property>
+<property>/gear/gear[2]/wow</property>
+</or>
+</condition>
+      <volume>
+        <property>/gear/gear[2]/rollspeed-ms</property>
+        <type>log</type>
+        <factor>0.12</factor>
+      </volume>
+</rumble>
+
+<gear1>
+<name>gear</name>
+<mode>in-transit</mode>
+<path>Sounds/gear.wav</path>
+<property>/gear/gear[0]/position-norm</property>
+<pitch>
+<internal>dt_play</internal>
+<offset>1.0</offset>
+<factor>-0.001</factor>
+</pitch>
+</gear1>
+
+<gear1>
+<name>gear-lock</name>
+<path>Sounds/gear-lck.wav</path>
+<condition>
+<equals>
+<property>/gear/gear[0]/position-norm</property>
+<value>0</value>
+</equals>
+</condition>
+</gear1>
+
+    <gear1>
+      <name>gear-lock</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[0]/position-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </gear1>
+
+<squeal1>
+<name>squeal</name>
+<path>/Aircraft/Embraer-ERJ145/Sounds/touchdown.wav</path>
+<property>/gear/gear[0]/wow</property>
+<volume>
+<property>/velocities/speed-down-fps</property>
+<factor>0.05</factor>
+</volume>
+<volume>
+<property>/velocities/airspeed-kt</property>
+<factor>0.01</factor>
+</volume>
+<volume>
+<internal>dt_stop</internal>
+<factor>0.05</factor>
+<max>1.0</max>
+</volume>
+<pitch>
+<property>/velocities/airspeed-kt</property>
+<factor>0.0025</factor>
+<offset>1.2</offset>
+</pitch>
+</squeal1>
+
+<gear2>
+<name>gear</name>
+<mode>in-transit</mode>
+<path>Aircraft/Embraer-ERJ145/Sounds/gear-up.wav</path>
+<property>/gear/gear[1]/position-norm</property>
+<pitch>
+<internal>dt_play</internal>
+<offset>1.0</offset>
+<factor>-0.001</factor>
+</pitch>
+</gear2>
+
+<gear2>
+<name>gear-lock</name>
+<path>Sounds/gear-lck.wav</path>
+<condition>
+<equals>
+<property>/gear/gear[1]/position-norm</property>
+<value>0</value>
+</equals>
+</condition>
+</gear2>
+
+    <gear2>
+      <name>gear-lock</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[1]/position-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </gear2>
+
+<squeal2>
+<name>squeal</name>
+<path>/Aircraft/Embraer-ERJ145/Sounds/touchdown.wav</path>
+<property>/gear/gear[1]/wow</property>
+<volume>
+<property>/velocities/speed-down-fps</property>
+<factor>0.05</factor>
+</volume>
+<volume>
+<property>/velocities/airspeed-kt</property>
+<factor>0.01</factor>
+</volume>
+<volume>
+<internal>dt_stop</internal>
+<factor>0.05</factor>
+<max>1.0</max>
+</volume>
+<pitch>
+<property>/velocities/airspeed-kt</property>
+<factor>0.0025</factor>
+<offset>1.2</offset>
+</pitch>
+</squeal2>
+
+<gear3>
+<name>gear</name>
+<mode>in-transit</mode>
+<path>Sounds/gear.wav</path>
+<property>/gear/gear[2]/position-norm</property>
+<pitch>
+<internal>dt_play</internal>
+<offset>1.0</offset>
+<factor>-0.001</factor>
+</pitch>
+</gear3>
+
+<gear3>
+<name>gear-lock</name>
+<path>Sounds/gear-lck.wav</path>
+<condition>
+<equals>
+<property>/gear/gear[2]/position-norm</property>
+<value>0</value>
+</equals>
+</condition>
+</gear3>
+
+    <gear3>
+      <name>gear-lock</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[2]/position-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </gear3>
+
+<squeal3>
+<name>squeal</name>
+<path>/Aircraft/Embraer-ERJ145/Sounds/touchdown.wav</path>
+<property>/gear/gear[2]/wow</property>
+<volume>
+<property>/velocities/speed-down-fps</property>
+<factor>0.05</factor>
+</volume>
+<volume>
+<property>/velocities/airspeed-kt</property>
+<factor>0.01</factor>
+</volume>
+<volume>
+<internal>dt_stop</internal>
+<factor>0.05</factor>
+<max>1.0</max>
+</volume>
+<pitch>
+<property>/velocities/airspeed-kt</property>
+<factor>0.0025</factor>
+<offset>1.2</offset>
+</pitch>
+</squeal3>
 
     <flap>
-        <name>flaps</name>
-        <path>Sounds/flaps.wav</path>
-        <property>surface-positions/flap-pos-norm</property>
-        <mode>in-transit</mode>
-        <volume>
-            <property>sim/sound/ext-volume</property>
-        </volume>
-        <position>
-            <x>0</x>
-            <y>0</y>
-            <z>0</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>10.0</max-dist>
+      <name>flaps</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/left-flap-pos-norm</property>
+      <volume>
+        <factor>0.15</factor>
+      </volume>
     </flap>
+    
+    <flap>
+      <name>flaps</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/right-flap-pos-norm</property>
+      <volume>
+        <factor>0.25</factor>
+      </volume>
+    </flap>
+    
+    <spoiler>
+      <name>spoilers</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/left-lower-spoiler-pos-norm</property>
+      <volume>
+        <factor>0.15</factor>
+      </volume>
+    </spoiler>
+    
+    <spoiler>
+      <name>spoilers</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/left-upper-spoiler-pos-norm</property>
+      <volume>
+        <factor>0.15</factor>
+      </volume>
+    </spoiler>
+    
+    <spoiler>
+      <name>spoilers</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/right-lower-spoiler-pos-norm</property>
+      <volume>
+        <factor>0.25</factor>
+      </volume>
+    </spoiler>
+    
+    <spoiler>
+      <name>spoilers</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/right-upper-spoiler-pos-norm</property>
+      <volume>
+        <factor>0.25</factor>
+      </volume>
+    </spoiler>
+
+<wind>
+<name>wind</name>
+<mode>looped</mode>
+<path>Sounds/wind.wav</path>
+<property>/velocities/airspeed-kt</property>
+<volume>
+<property>/position/altitude-ft</property>
+<factor>-0.000015</factor>
+<offset>1.0</offset>
+<min>0.1</min>
+<max>1.0</max>
+</volume>
+<volume>
+<property>/velocities/airspeed-kt</property>
+<factor>0.0015</factor>
+<min>0.03</min>
+<max>0.25</max>
+</volume>
+<pitch>
+<property>/velocities/airspeed-kt</property>
+<factor>0.01</factor>
+<offset>1.25</offset>
+</pitch>
+</wind>
+
+    <crash>
+      <name>intense ground contact</name>
+      <mode>transient</mode>
+      <path>Sounds/crash.wav</path>
+      <property>sim/crashed</property>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <pitch>
+        <factor>1.5</factor>
+      </pitch>
+    </crash>
+
+    <switch>
+      <name>click on</name>
+      <mode>once</mode>
+      <path>Aircraft/Embraer-ERJ145/Sounds/click.wav</path>
+      <condition>
+        <property>/sim/sound/switch</property>
+      </condition>
+      <volume>
+        <factor>0.45</factor>
+      </volume>
+    </switch>
+
+    <switch>
+      <name>click off</name>
+      <mode>once</mode>
+      <path>Aircraft/Embraer-ERJ145/Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>/sim/sound/switch</property>
+        </not>
+      </condition>
+      <volume>
+        <factor>0.45</factor>
+      </volume>
+    </switch>
 
     <speedbrake>
-        <name>speedbrake</name>
-        <path>Sounds/flaps.wav</path>
-        <property>surface-positions/speedbrake-pos-norm</property>
-        <mode>in-transit</mode>
-        <volume>
-            <property>sim/sound/ext-volume</property>
-        </volume>
-        <position>
-            <x>-7</x>
-            <y>0</y>
-            <z>0</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>10.0</max-dist>
+      <name>speedbrake</name>
+      <mode>in-transit</mode>
+      <path>Sounds/whine.wav</path>
+      <condition>
+        <less-than>
+          <property>/surface-positions/speedbrake-pos-norm</property>
+          <value>0.8</value>
+        </less-than>
+        <greater-than>
+          <property>/surface-positions/speedbrake-pos-norm</property>
+          <value>0.18</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <factor>0.45</factor>
+      </volume>
     </speedbrake>
 
-    <wind>
-        <name>wind</name>
-        <condition>
-        <property>sim/current-view/internal</property>
-        </condition>
-        <path>Sounds/wind.wav</path>
-        <property>velocities/airspeed-kt</property>
-        <mode>looped</mode>
-        <volume>
-            <property>velocities/airspeed-kt</property>
-            <factor>0.0005</factor>
-            <min>0.0</min>
-            <max>0.3</max>
-        </volume>
-        <pitch>
-            <property>velocities/airspeed-kt</property>
-            <factor>0.01</factor>
-            <offset>1.0</offset>
-        </pitch>
-        <position>
-            <x>-8</x>
-            <y>0</y>
-            <z>0.</z>
-        </position>
-        <reference-dist>1</reference-dist>
-        <max-dist>5.0</max-dist>
-    </wind>
+    <door>
+      <name>Crew door</name>
+      <path>Sounds/door_close.wav</path>
+      <condition>
+        <equals>
+          <property>/instrumentation/doors/crew/position-norm</property>
+          <value>0.0</value>
+        </equals>
+      </condition>
+      <volume>
+        <factor>0.4</factor>
+      </volume>
+    </door>
 
-    <click>
-        <name>click1</name>
-        <path>Sounds/click.wav</path>
-        <type>avionics</type>
-        <condition>
-            <property>sim/sound/click</property>
-        </condition>
-    </click>
-
-    <click>
-        <name>click2</name>
-        <path>Sounds/click.wav</path>
-        <type>avionics</type>
-        <condition>
-            <not>
-                <property>sim/sound/click</property>
-            </not>
-        </condition>
-    </click>
-
-    </fx>
-
+</fx>
 
 </PropertyList>

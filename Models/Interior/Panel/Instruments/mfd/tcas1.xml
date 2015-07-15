@@ -34,9 +34,9 @@
       <point-size>20</point-size>
       <font>helvetica_bold</font>
       <color>
-        <red>   0.8 </red>
-        <green> 0.8 </green>
-        <blue>  0.8 </blue>
+        <red>0.8</red>
+        <green>0.8</green>
+        <blue>0.8</blue>
       </color>
       <chunks>
         <chunk>
@@ -60,9 +60,9 @@
       <point-size>20</point-size>
       <font>helvetica_bold</font>
       <color>
-        <red>   0.8 </red>
-        <green> 0.8 </green>
-        <blue>  0.8 </blue>
+        <red>0.8</red>
+        <green>0.8</green>
+        <blue>0.8</blue>
       </color>
       <chunks>
         <chunk>

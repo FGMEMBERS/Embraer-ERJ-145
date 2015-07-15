@@ -19,7 +19,7 @@
         <less-than>
           <!-- /position/altitude-ft -->
           <property>sim/multiplay/generic/float[3]</property>
-          <value>5000</value>
+          <value>3000</value>
         </less-than>
       </and>
     </condition>
@@ -70,7 +70,7 @@
           <alpha><value> 0.025 </value></alpha>
         </color>
         <size>
-          <value>0.45</value>
+          <value>0.75</value>
         </size>
       </start>
 
@@ -82,7 +82,7 @@
           <alpha><value> 0.0125 </value></alpha>
         </color>
         <size>
-          <value>1.5</value>
+          <value>7.5</value>
         </size>
       </end>
 
