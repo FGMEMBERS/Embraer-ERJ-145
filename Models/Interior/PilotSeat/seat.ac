@@ -7,7 +7,7 @@ name "SeatCushionsP"
 loc -3.032 -0.75331 -0.50012
 data 8
 Cube.121
-texture "C:/Program Files/FlightGear 3.4.0/data/Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seat.png"
+texture "Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seat.png"
 numvert 324
 3.099 0.694148 0.773276
 3.099 0.694148 0.727795
@@ -2464,7 +2464,7 @@ name "SeatP"
 loc -3.032 -0.75331 -0.50012
 data 8
 Cube.127
-texture "C:/Program Files/FlightGear 3.4.0/data/Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seat.png"
+texture "Aircraft/Embraer-ERJ-145/Models/Interior/Seats/seat.png"
 numvert 276
 2.8401 0.22407 0.236103
 2.8401 0.22407 0.266103
