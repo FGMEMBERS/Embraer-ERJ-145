@@ -1,36 +1,96 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
+  
+  <keyboard>
+    
+    <key n="68">
+      <name>D</name>
+      <desc>Emergency door</desc>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </key>
+    
+    <key n="100">
+      <name>d</name>
+      <desc>Crew door</desc>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </key>
+    
+    <key n="101">
+      <name>e</name>
+      <desc>Cargo door</desc>
+      <binding>
+        <command>nasal</command>
+        <script>doors.cargo.toggle();</script>
+      </binding>
+    </key>
+    
+    <key n="127">
+      <name>Delete</name>
+      <desc>Toggle Reversers</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[0]/reverser</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[1]/reverser</property>
+      </binding>
+    </key>
+    
+    <key n="125">
+      <name>}</name>
+      <desc>Engine Autostart</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/electric/engine/generator</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/instrument-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/nav-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/strobe</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/anti-ice/engine/carb-heat</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine/fuel-pump</property>
+      </binding>
 
-   <key n="68">
-    <name>D</name>
-    <desc>Emergency door</desc>
-    <binding>
-     <command>nasal</command>
-     <script>doors.passenger.toggle();</script>
-    </binding>
-   </key>
-
-   <key n="100">
-    <name>d</name>
-    <desc>Crew door</desc>
-    <binding>
-     <command>nasal</command>
-     <script>doors.crew.toggle();</script>
-    </binding>
-   </key>
-
-  <key n="127">
-    <name>Delete</name>
-    <desc>Toggle Reversers</desc>
-    <binding>
-      <command>property-toggle</command>
-      <property>controls/engines/engine[0]/reverser</property>
-    </binding>
-    <binding>
-      <command>property-toggle</command>
-      <property>controls/engines/engine[1]/reverser</property>
-    </binding>
-  </key>
-
+      <binding>
+        <command>nasal</command>
+        <script>engines.autostart();</script>
+      </binding>
+    </key>
+    
+    <key n="108">
+      <name>l</name>
+      <desc>Landing light</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/landing-lights</property>
+      </binding>
+    </key>
+    
+  </keyboard>
+  
 </PropertyList>

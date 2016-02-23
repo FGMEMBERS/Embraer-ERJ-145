@@ -7,9 +7,6 @@ var Rbus = props.globals.initNode("/systems/electrical/right-bus",0,"DOUBLE");
 var Amps = props.globals.initNode("/systems/electrical/amps",0,"DOUBLE");
 var EXT  = props.globals.initNode("/controls/electric/external-power",0,"DOUBLE");
 var XTie  = props.globals.initNode("/systems/electrical/xtie",0,"BOOL");
-var AVswitch=props.globals.initNode("controls/electric/avionics-switch",0,"BOOL");
-var APUgen=props.globals.initNode("controls/electric/APU-generator",0,"BOOL");
-var CDUswitch=props.globals.initNode("instrumentation/cdu/serviceable",0,"BOOL");
 var lbus_volts = 0.0;
 var rbus_volts = 0.0;
 
@@ -263,11 +260,6 @@ update_virtual_bus = func( dt ) {
         var battery_volts = battery.get_output_volts();
         lbus_volts = battery_volts;
         power_source = "battery";
-        if (APUgen.getValue())
-        {
-          power_source = "APU";
-          lbus_volts=24;
-        }
         var alternator1_volts = alternator1.get_output_volts();
         if (alternator1_volts > lbus_volts) {
             lbus_volts = alternator1_volts;

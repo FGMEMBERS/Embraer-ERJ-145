@@ -5,9 +5,9 @@
   <text>
     <name>LFuelFlow</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.022</y-m>
-      <z-m>0.0445</z-m>
+      <x-m> 0.0000 </x-m>
+      <y-m> 0.0220 </y-m>
+      <z-m> 0.0445 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -26,9 +26,9 @@
   <text>
     <name>RFuelFlow</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.063</y-m>
-      <z-m>0.0445</z-m>
+      <x-m> 0.0000 </x-m>
+      <y-m> 0.0630 </y-m>
+      <z-m> 0.0445 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -47,9 +47,9 @@
   <text>
     <name>TTLfuel</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.043</y-m>
-      <z-m>0.036</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.043 </y-m>
+      <z-m> 0.036 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -68,9 +68,9 @@
   <text>
     <name>Ltank</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.023</y-m>
-      <z-m>0.020</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.023 </y-m>
+      <z-m> 0.020 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -89,9 +89,9 @@
   <text>
     <name>Rtank</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.064</y-m>
-      <z-m>0.020</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.064 </y-m>
+      <z-m> 0.020 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -110,9 +110,9 @@
   <text>
     <name>Ctank</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.043</y-m>
-      <z-m>0.024</z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.043 </y-m>
+      <z-m> 0.024 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -131,9 +131,9 @@
   <text>
     <name>Lbus volts</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.023</y-m>
-      <z-m>-0.0</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.023 </y-m>
+      <z-m> -0.000 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -152,9 +152,9 @@
   <text>
     <name>Rbus volts</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.062</y-m>
-      <z-m>-0.0</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.062 </y-m>
+      <z-m> -0.000 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -173,9 +173,9 @@
   <text>
     <name>Lbus amps</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.023</y-m>
-      <z-m>-0.008</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.023 </y-m>
+      <z-m> -0.008 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -195,9 +195,9 @@
   <text>
     <name>Rbus amps</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.060</y-m>
-      <z-m>-0.008</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.060 </y-m>
+      <z-m> -0.008 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -217,9 +217,9 @@
   <text>
     <name>LHydr</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.040</y-m>
-      <z-m>-0.037</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.040 </y-m>
+      <z-m> -0.037 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -239,9 +239,9 @@
   <text>
     <name>RHydr</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.067</y-m>
-      <z-m>-0.037</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.067 </y-m>
+      <z-m> -0.037 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -261,9 +261,9 @@
   <text>
     <name>Lfan</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.059</y-m>
-      <z-m>0.027</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.059 </y-m>
+      <z-m>  0.027 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -282,9 +282,9 @@
   <text>
     <name>Rfan</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.039</y-m>
-      <z-m>0.027</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.039 </y-m>
+      <z-m>  0.027 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -303,9 +303,9 @@
   <text>
     <name>LTurbine</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.064</y-m>
-      <z-m>0.018</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.064 </y-m>
+      <z-m>  0.018 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -324,9 +324,9 @@
   <text>
     <name>RTurbine</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.034</y-m>
-      <z-m>0.018</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.034 </y-m>
+      <z-m>  0.018 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -345,9 +345,9 @@
   <text>
     <name>Governor</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.049</y-m>
-      <z-m>0.086</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.049 </y-m>
+      <z-m>  0.086 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -366,9 +366,9 @@
   <text>
     <name>RAT</name>
     <offsets>
-      <x-m>0.0</x-m>
-      <y-m>-0.005</y-m>
-      <z-m>0.018</z-m>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.005 </y-m>
+      <z-m>  0.018 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -411,19 +411,19 @@
       <alpha-prop>sim/color-set/green/a</alpha-prop>
     </emission>
     <ambient>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </ambient>
     <diffuse>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </diffuse>
     <specular>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </specular>
   </animation>
   
@@ -439,19 +439,19 @@
       <alpha-prop>sim/color-set/cyan/a</alpha-prop>
     </emission>
     <ambient>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </ambient>
     <diffuse>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </diffuse>
     <specular>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </specular>
   </animation>
   
