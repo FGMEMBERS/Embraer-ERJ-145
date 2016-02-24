@@ -57,10 +57,10 @@ depending on weight and OAT.
 Using the given weights, the solution is using a total weight of 37983 lbs + fuel.
 -->
 
-<approach speed="140" aoa="6" fuel="0.3">
+<approach speed="140" aoa="4" fuel="0.3">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
-  <control-setting axis="/controls/flight/flaps" value="0.5"/>
+  <control-setting axis="/controls/flight/flaps" value="1.0"/>
   <control-setting axis="/controls/gear/gear-down" value="1"/>
   <solve-weight idx="0" weight="1800"/>
   <solve-weight idx="1" weight="6000"/>
@@ -68,7 +68,7 @@ Using the given weights, the solution is using a total weight of 37983 lbs + fue
   <solve-weight idx="3" weight="625"/>
 </approach>
 
-<cruise speed="470" alt="35000" fuel="0.6">
+<cruise speed="470" alt="37000" fuel="0.6">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.95"/>
   <control-setting axis="/controls/engines/engine[1]/throttle" value="0.95"/>
   <control-setting axis="/controls/flight/flaps" value="0"/>
