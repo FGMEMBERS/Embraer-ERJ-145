@@ -86,11 +86,10 @@
       <name>l</name>
       <desc>Landing light</desc>
       <binding>
-        <command>nasal</command>
-        <script>	setprop("/controls/lighting/landing-lights", 1);
-					setprop("/sim/rendering/als-secondary-lights/use-alt-landing-light", 1);
-					setprop("/sim/rendering/als-secondary-lights/use-landing-light", 1);
-		</script>
+        <command>property-toggle</command>
+        <property>/controls/lighting/landing-lights</property>
+		<property>/sim/rendering/als-secondary-lights/use-alt-landing-light</property>
+		<property>/sim/rendering/als-secondary-lights/use-landing-light</property>
 	  </binding>
 	 </key>
   </keyboard>
