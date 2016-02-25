@@ -34,4 +34,4 @@ strobe.interval = 0;
 # enable nav and strobe all the time, until I get an OHP sorted out
 
 setprop("/sim/controls/lighting/nav-lights", 1);
-seprop("/sim/controls/lighting/strobe", 1);
+setprop("/sim/controls/lighting/strobe", 1);
