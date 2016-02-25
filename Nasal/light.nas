@@ -30,3 +30,8 @@ beacon.interval = 0;
 
 var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0.05, 0.05, 0.05, 1] );
 strobe.interval = 0;
+
+# enable nav and strobe all the time, until I get an OHP sorted out
+
+setprop("/sim/controls/lighting/nav-lights", 1);
+seprop("/sim/controls/lighting/strobe", 1);
