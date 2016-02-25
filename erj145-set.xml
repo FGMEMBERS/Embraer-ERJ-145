@@ -5,7 +5,7 @@
   <sim>
 
     <description>Embraer ERJ 145 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM)</author>
+     <author>Emmanuel BARANGER (3D/FDM), 'Buckaroo' (Updates 2015), Jonathan REDPATH (Updates 2016)</author>
     <flight-model archive="y">yasim</flight-model>
     <aero archive="y">erj145-yasim</aero>
 
