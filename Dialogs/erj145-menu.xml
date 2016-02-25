@@ -21,14 +21,8 @@
           <property>/controls/lighting/instrument-lights</property>
         </binding>
         <binding>
-          <command>nasal</command>
-          <script>
-		  if getprop("/controls/lighting/nav-lights"); {
-		  print("Lights... ok");
-			} else {
-				setprop("/controls/lighting/nav-lights", 1);
-			}
-			</script>
+          <command>property-toggle</command>
+          <property>/controls/lighting/nav-lights</property>
         </binding>
         <binding>
           <command>property-toggle</command>
