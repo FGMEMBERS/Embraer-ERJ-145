@@ -86,22 +86,32 @@
     </emission>
   </animation>
   <!-- Seat pilote -->
-  <model>
+  <!--<model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
     <offsets>
       <x-m> -11.0 </x-m>
       <y-m>  -0.46 </y-m>
       <z-m>  -0.55 </z-m>
     </offsets>
-  </model>
+  </model>-->
   
   <!-- Seat copilote -->
-  <model>
+  <!--<model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
     <offsets>
       <x-m> -11.0 </x-m>
       <y-m>   0.52 </y-m>
       <z-m>  -0.55 </z-m>
+    </offsets>
+  </model>-->
+  
+   <!-- Pilot Seats, Yoke, Pedals -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Yoke+Pedal+PSeat/seatyokepedal.ac</path>
+    <offsets>
+      <x-m> -15.5 </x-m>
+      <y-m>   -0.0 </y-m>
+      <z-m>  -1.30 </z-m>
     </offsets>
   </model>
   
