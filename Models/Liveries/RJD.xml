@@ -6,8 +6,8 @@
     
     <model>
       <livery>
-        <name type="string">United Express</name>
-        <texture>UAL.png</texture> <!-- not made yet?! -->
+        <name type="string">RotanaJet</name>
+        <texture>RJD.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
