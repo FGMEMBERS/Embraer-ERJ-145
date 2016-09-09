@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Embraer ERJ 145 XR : 2014 BARANGER Emmanuel
+                Updated : 2015 Gary Neely "Buckaroo"
+                Updated : 2016 BARANGER Emmanuel
+
+          Source        : http://en.wikipedia.org/wiki/Embraer_ERJ_145_family
+
+          wingspan      : 20.04 m                   (    65 ft 9 in        )
+          length        : 29.87 m                   (    98 ft 0 in        )
+          height        :  6.76 m                   (    22 ft 2 in        )
+          Engines       : 2 Rolls-Royce AE 3007-A1E (  8700 lb thrust each )
+          Empty weight  : 18500 kg                  ( 40785 lb             )
+          Cruise speed  :  470 kts                  ( 851 km/h / Mach .80  )
+
+     Buck notes:
+
+       ERJ-145XR (or LR with a few mods)
+
+       base operating weight 27758 lbs
+       max zero fuel weight  40785 lbs
+       max takeoff weight    53131 lbs
+       max landing weight    44092 lbs
+       max payload	         13027 lbs
+
+       Vmo	0.80M/320 kts (XR)
+       Vmo	0.78M/320 kts (LR)
+       Vle	250 KIAS
+       Vlo	200 KIAS
+       Va   200 KIAS
+       Vfe  250 KIAS 9 degrees
+       Vfe  200 KIAS 18 degrees
+       Vfe  200 KIAS 22 degrees
+       Vfe  160 KIAS 45 degrees (XR)
+       Vfe  145 KIAS 45 degrees (LR)
+
+       max fuel imbalance	800 lbs
+       max positive load	2.5G with no flaps
+                          2.0G with flaps
+       max negative load	-1G with no flaps
+                           0G with flaps
+
+       The CG range of a -145 is fairly narrow, about 20% to 27% MAC.
+
+       This is not meant to be an accurate simulation of the XR, but it should be sufficient for
+       most VA pilots. Climb rates are reasonable, stall is about right, top end cruise
+       is about right. Range needs to be checked, as does cross-wind handling, but they're likely
+       not terrible. If you change this FDM, be sure that you KNOW WHAT YOU ARE DOING
+       otherwise you could turn a reasonable flying model into an unreasonable flying model.
+
+       Gary Neely "Buckaroo", May 2015
+-->
+<airplane mass="27758" version="YASIM_VERSION_CURRENT">
+
+  <!-- Buck notes:
+
+        Typical approach for this thing:
+        begin downwind at 180 KIAS, gear up, flaps up
+        mid downwind at 160 KIAS, gear up, flaps 9 degrees
+        end downwind at 140 KIAS, gear down, flaps 22 degrees
+        base leg at 140 KIAS, flaps 22 or 45 degrees
+        final at Vref + gust + 1/2 wind
+
+        Using the idea that V2 is at least 120% Vs, I'm guessing that stall could be anywhere from 90 to 115
+        depending on weight and OAT.
+
+        Using the given weights, the solution is using a total weight of 37983 lbs + fuel.
+  -->
+  <approach speed="140" aoa="4" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <solve-weight idx="0" weight="1800"/>
+    <solve-weight idx="1" weight="6000"/>
+    <solve-weight idx="2" weight="1800"/>
+    <solve-weight idx="3" weight="625"/>
+  </approach>
+
+  <cruise speed="470" alt="37000" fuel="0.6">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.95"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.95"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <solve-weight idx="0" weight="1800"/>
+    <solve-weight idx="1" weight="6000"/>
+    <solve-weight idx="2" weight="1800"/>
+    <solve-weight idx="3" weight="625"/>
+  </cruise>
+
+  <cockpit x="11" y="0.4" z="-0.1"/>
+
+  <fuselage ax="14.92427" ay=" 0.00000" az="-1.48220" bx=" 12.37025" by=" 0.00000" bz="-1.06748" width="1.654" taper="0.2" midpoint="1"/>
+  <fuselage ax="12.37025" ay=" 0.00000" az="-1.06748" bx=" 10.87561" by=" 0.00000" bz="-0.69382" width="2.355" taper="0.7" midpoint="1"/>
+  <fuselage ax="10.87561" ay=" 0.00000" az="-0.69382" bx=" -6.43974" by=" 0.00000" bz="-0.69382" width="2.355" taper="1.0" midpoint="1"/>
+  <fuselage ax="-6.43974" ay=" 0.00000" az="-0.69382" bx=" -9.42322" by=" 0.00000" bz="-0.64353" width="2.355" taper="0.8" midpoint="0"/>
+  <fuselage ax="-9.42322" ay=" 0.00000" az="-0.64353" bx="-12.90208" by=" 0.00000" bz="-0.21357" width="1.900" taper="0.2" midpoint="0"/>
+
+  <!-- Buck notes:
+         I'm not bothering with making fuselage elements from engine nacelles. By design these have little drag impact.
+  -->
+  <!-- Left engine -->
+  <!--
+    <fuselage ax="-5.48830" ay=" 2.10926" az="-0.09991" bx=" -9.79638" by=" 2.10926" bz="-0.09991" width="1.383" taper="0.8" midpoint="0.2"/>
+  -->
+
+  <!-- Right engine -->
+  <!--
+    <fuselage ax="-5.48830" ay="-2.10926" az="-0.09991" bx=" -9.79638" by="-2.10926" bz="-0.09991" width="1.383" taper="0.8" midpoint="0.2"/>
+  -->
+
+  <!-- Buck notes:
+  
+         Supercritical airfoils for modern airliners vary with the span, are proprietary, and
+         are beyond YASim's scope, so I'm not even going to bother researching this one.
+         Numbers here are guesses that should work OK for an airliner of this type.
+
+         Flap drag and lift values are guesses, but reasonable.
+
+         The -145 does not have slats. It has a small fixed leading edge droop and vortilons.
+         The model also has slats; these should be removed (or at least disable the animations).
+
+         Incidence is a guess, but reasonable. It gives the aircraft some ground visibility on approach,
+         and keeps the fuselage reasonably level at cruise, a requirement for most airliners.
+
+         I shift the wings forward 0.2m to compensate for YASim lift and moment force application.
+         original wing locations: x="-0.30450" x="-0.83468"
+
+         Aileron effects should not be too great. The ERJ-145 is known to be a bit heavy in roll response,
+         particularly at low speeds.
+  -->
+
+  <!-- Inboard segment -->
+  <mstab x="-0.3245" y="1.127" z="-1.70136"
+         chord="4.2"
+         length="2.550"
+         taper="0.70"
+         sweep="12"
+         dihedral="3.4"
+         incidence="2.5"
+         camber="0.01">
+         <stall aoa="13" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.35" drag="2.4"/>
+         <spoiler start="0" end="1" lift="0.5" drag="1.5"/>
+         
+         <control-input axis="/controls/flight/spoilers" control="SPOILER"/>
+         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+         
+         <control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>  
+         <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+         
+         <control-speed control="FLAP0" transition-time="7"/>
+         <control-speed control="SPOILER" transition-time="1"/>
+  </mstab>
+
+  <!-- Outboard segment -->
+  <wing x="-0.85468" y="3.61689" z="-1.57643"
+        chord="2.942"
+        length="6.6"
+        taper="0.4"
+        sweep="19"
+        dihedral="4.5"
+        incidence="2.5"
+        twist= "-2"
+        camber="0.01">
+        <stall aoa="13" width="1" peak="1.5"/>
+        <flap0 start="0.00" end="0.55" lift="1.35" drag="2.4"/>
+        <flap1 start="0.55" end="1.00" lift="1.16" drag="1.15"/>
+        
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+        
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        
+        <control-speed control="FLAP0" transition-time="7"/>
+  </wing>
+
+  <mstab x="-3.02274" y="9.83808" z="-1.18101"
+         chord="1.182"
+         length="1.15"
+         taper="0.3"
+         sweep="25"
+         dihedral="70">
+         <stall aoa="20" width="1" peak="1.5"/>
+  </mstab>
+
+
+  <!-- Buck notes:
+  
+         The elevator should be fairly strong, since the -145 remains senstive to pitch even at lower speeds.
+         If there's any under-camber, it's not very signficant.
+  -->
+  <hstab x="-13.06474" y="0" z="3.11266"
+         chord="1.937" 
+         length="3.698" 
+         taper="0.626"
+         sweep="14.166"
+         camber="0">
+         <stall aoa="17" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.53" drag="1.4"/>
+         
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+         
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <!-- Buck notes:
+  
+         Not sure if the rudder effectiveness is reasonable. It may be too strong, but I haven't conducted
+         any cross-wind tests. It should be able to handle up to 30 knots under good conditions.
+  -->
+  <vstab x="-10.94804" y="0" z="-0.01304" 
+         chord="3.752" 
+         length="4" 
+         taper="0.45"
+         sweep="34">
+         <stall aoa="16" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+         
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" />
+  </vstab>
+
+  <!--  Rolls-Royce Tyne
+  
+                 source       : http://en.wikipedia.org/wiki/Rolls-Royce_AE_3007
+
+                 type         : Turbofan
+                 power        : 8700 lbs
+                 weight       : 1585 lb ( 719 kg )
+  
+       Buck notes:
+  
+         The LR model uses either the Rolls-Royce AE 3007-A1 2ith 7800 lb thrust or
+         the Rolls-Royce AE 3007-A1P with 8300 lb thrust.
+         The XR model uses theRolls-Royce AE 3007-A1E with 8700 lb thrust.
+         I don't know what ambient temperatures are used for these thrust ratings, so they
+         may not match with YASim, which uses the standard atmosphere temp of 15C.
+         Dry weight for these models is about 1,585 lb.
+         SFC unknown but may be about 0.39. It's a very efficient engine.
+         Max N1: 100%
+         Max N2 for A1 and A1P: 102.4%
+         Max N2 for A1E: 105%
+         EPR? Does the engine instrumentation even use this?
+
+         These are of course turbofan engines and YASim doesn't well simulate high-bypass engines.
+
+         An action point of x=-8.78 is too far back. Turbofan engines get most of their thrust from the
+         bypass air powered by the forward fan, so most thrust is delivered to that fan's thrust bearing.
+         Let's just use the center of mass for the action point.
+  -->
+  <jet x="-7.3" y="2.11"  z="-0.1"
+       mass="1585"
+       thrust="8700"
+       tsfc="0.39"
+       epr="5.66">
+       <actionpt x="-7.3" y="2.11"  z="-0.1"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+       <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
+       
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[0]"/>
+       
+       <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+  </jet>
+
+  <jet x="-7.3" y="-2.11" z="-0.1"
+       mass="1585"
+       thrust="8700"
+       tsfc="0.39"
+       epr="5.66">
+       <actionpt x="-7.3" y="-2.11"  z="-0.1"/>
+       <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+       <control-input axis="/controls/engines/engine[1]/mixture" control="MIXTURE"/>
+       <control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST"/>
+       
+       <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm[1]"/>
+       
+       <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
+  </jet>
+
+
+  <!-- Buck notes:
+
+        Transition time of gear is currently unknown, 7 secs is a guess.
+        Actual compressions are unknown, using the modeler's guess.
+
+        Note that the model has the main gear deployed more than half a meter too far back.
+        Even without good diagrams, it's evident from photos that the tires are a full tire diameter
+        forward of the wing trailing edge. Position should be about 0.55 forward, more or less.
+        old: x=-1.662, new: x=-1.112
+        The model and animations should be changed to correct this.
+  -->
+  <!-- nose -->
+  <gear x="12.651989" y="0" z="-3.07902"
+        compression="0.2" 
+        spring="1" 
+        damp="1" >
+        <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <gear x="-1.66240" y="2.05361" z="-3.37602" 
+        compression="0.25" 
+        spring="0.85" 
+        damp="1" >
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <gear x="-1.66240" y="-2.05361" z="-3.37602" 
+        compression="0.25" 
+        spring="0.85" 
+        damp="1" >
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- Buck notes:
+
+        Variable weights to represent passengers and baggage. Being a fairly small airliner, the ERJ-145
+        has a fairly narrow balance range. It is not uncommon for passengers in the first three or last
+        three rows to be asked to move in order to re-distribute weight.
+        These positions are simple estimates.
+  -->
+  <weight x=" 7.500" y="0" z="-0.75" mass-prop="/sim/weight[0]/weight-lb"/> <!-- First three rows -->
+  <weight x="-0.483" y="0" z="-0.75" mass-prop="/sim/weight[1]/weight-lb"/> <!-- middle rows -->
+  <weight x="-3.800" y="0" z="-0.75" mass-prop="/sim/weight[2]/weight-lb"/> <!-- Last three rows -->
+  <weight x="-7.500" y="0" z="-0.75" mass-prop="/sim/weight[3]/weight-lb"/> <!-- baggage -->
+
+  <!-- Buck notes:
+
+         The LR/XR version has two fuel tanks, one in each wing, of 5717 lbs capacity. The tanks
+         occupy the center of the wing between the spars from root to a fair way toward the tip.
+         These tanks have three or four sub-sections divided by one-way baffles fitted with check valves,
+         such that fuel drains inward toward the root where the fuel collection sumps are located.
+         The left tank normally feeds the left engine, the right tank feeds the right.
+         Cross-feeding is available, but fuel cannot be transferred between tanks.
+
+         The XR version has an additional ventral tank with a capacity of 1863 lbs. This tank is probably
+         located in the belly just forward of the main gear retracted position. Note that there is a
+         ventral skid at that location designed to help protect the tank in the event of a gear-up landing.
+         The skid is one way to easily identify the XR version. The 3D model lacks this feature.
+
+         To simulate the wing tanks, it would be best to create three tanks per wing to represent the
+         baffled regions. The outermost tank would drain first, then the center, then the inboard last.
+         In this way, the tanks drain appropriately and handling improves as fuel is used.
+         This will need a custom Nasal fuel handling script, which the model should have anyway.
+
+         Tanks in order of:
+         left wing (5717 lbs, 39 lbs unusable)
+         right wing (5717 lbs, 39 lbs unusable)
+         center (1863 lbs, 21 lbs unusable)
+  -->
+  <tank x="-0.483" y=" 4" z="-1.50" jet="true" capacity="5717"/>
+  <tank x="-0.483" y="-4" z="-1.50" jet="true" capacity="5717"/>
+  <tank x="-0.483" y=" 0" z="-1.75" jet="true" capacity="1863"/>
+
+  <!-- Buck notes:
+
+        CG range of about 20% to 27% MAC.
+                          27% MAC: x=-0.540
+                          25% MAC: x=-0.483
+  -->
+  <ballast x="10" y="0" z="-0.75" mass="4200"/>
+
+</airplane>

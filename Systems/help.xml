@@ -4,8 +4,20 @@
 
   <title>Embraer ERJ 145</title>
   <key>
+    <name>}</name>
+    <desc>Autostart</desc>
+  </key>
+  <key>
     <name>d</name>
-    <desc>Open/Close door</desc>
+    <desc>Open/Close passengers door</desc>
+  </key>
+  <key>
+    <name>D</name>
+    <desc>Open/Close emergency door</desc>
+  </key>
+  <key>
+    <name>e</name>
+    <desc>Open/Close cargo door</desc>
   </key>
   <key>
     <name>Delete</name>
@@ -15,5 +27,9 @@
     <name>j/k</name>
     <desc>Spoilers</desc>
   </key>
-  
+  <key>
+    <name>l</name>
+    <desc>On/Off Landing light</desc>
+  </key>
+    
 </PropertyList>

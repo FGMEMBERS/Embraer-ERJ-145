@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- Source : http://cdn-www.airliners.net/aviation-photos/photos/0/0/8/1184800.jpg -->
-
+<!-- Source : http://imgproc.airliners.net/photos/airliners/7/2/3/0540327-v40-10.jpg -->
 <PropertyList>
 
   <path>panel.ac</path>
@@ -23,9 +22,23 @@
     </offsets>
   </model>
   
+  <!-- PEDALS -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -0.12685 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.62744 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- YOKES -->
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/yokes/yokes.xml</path>
+  </model>
+  
   <!-- PFD -->
   <model>
-    <name>PFD1</name>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/pfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
@@ -35,7 +48,6 @@
   </model>
   
   <model>
-    <name>PFD1</name>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/pfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
@@ -46,7 +58,6 @@
   
   <!-- MFD -->
   <model>
-    <name>MFD1</name>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/mfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
@@ -56,7 +67,6 @@
   </model>
   
   <model>
-    <name>MFD1</name>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/mfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>

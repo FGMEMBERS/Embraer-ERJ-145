@@ -3,12 +3,12 @@
 <PropertyList>
 
   <path>seat.ac</path>
-
+  
   <animation>
+    <object-name>bigseat</object-name>
     <!-- Objets opaques -->
-    <object-name>armature</object-name>
-    <object-name>tissu</object-name>
+
+    <!-- Objets transparents -->
   </animation>
 
 </PropertyList>
-

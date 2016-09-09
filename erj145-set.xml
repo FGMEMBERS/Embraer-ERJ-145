@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList include="erj145-base.xml">
-
+<PropertyList include="Systems/erj145-base.xml">
+  
   <sim>
-
+    
     <description>Embraer ERJ 145 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <author>Emmanuel BARANGER (3D/FDM), 'Buckaroo' (FDM Updates 2015), Jonathan REDPATH (Updates 2016)</author>
+    
+    <aircraft-version>0.2</aircraft-version>
+    <status>Alpha</status>
+    
     <flight-model archive="y">yasim</flight-model>
-    <aero archive="y">erj145-yasim</aero>
-
+    <aero archive="y">Systems/erj145-yasim</aero>
+    
     <rating>
-      <FDM type="int">     2 </FDM>
+      <FDM type="int">     3 </FDM>
       <systems type="int"> 2 </systems>
       <cockpit type="int"> 2 </cockpit>
       <model type="int">   4 </model>
     </rating>
-
+    
   </sim>
-
+  
 </PropertyList>

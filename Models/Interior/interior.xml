@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>interior.ac</path>
-
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
@@ -11,6 +11,7 @@
     <object-name>planchet</object-name>
     <object-name>intporte</object-name>
     <object-name>intporte2</object-name>
+    <object-name>intcargo</object-name>
     <object-name>portebagage</object-name>
     <object-name>cloisons</object-name>
     <object-name>intcontourvitres</object-name>
@@ -18,28 +19,49 @@
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
   </animation>
-
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Embraer-ERJ-145/Models/Effects/Glass/glass</inherits-from>
-    <object-name>intvitres</object-name>
-  </effect>
   
+  <!-- working for Rembrandt -->
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>intvitres</object-name>
   </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>planchet</object-name>
+    <object-name>intporte</object-name>
+    <object-name>intporte2</object-name>
+    <object-name>intcargo</object-name>
+    <object-name>portebagage</object-name>
+    <object-name>cloisons</object-name>
+    <object-name>intcontourvitres</object-name>
+    <object-name>pedestal</object-name>
+    <object-name>panel</object-name>
+    <condition>
+      <greater-than>
+        <property>/sim/time/sun-angle-rad</property>
+        <value>1.57</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   0.4 </red>
+      <green> 0.4 </green>
+      <blue>  0.4 </blue>
+    </emission>
+  </animation>
   
   <!-- Pilote -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -11.29643 </x-m>
-      <y-m>  -0.47000 </y-m>
+      <y-m>  -0.52900 </y-m>
       <z-m>  -0.56928 </z-m>
     </offsets>
   </model>
-
+  
   <!-- Tableau de bord -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/panel.xml</path>
@@ -49,29 +71,28 @@
       <z-m>  -0.44630 </z-m>
     </offsets>
   </model>
-
+  
   <!-- Les sièges -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/all-seats.xml</path>
   </model>
-
-  <!-- Seat pilote -->
+  
+  <!-- Pilot Seats -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
     <offsets>
-      <x-m> -11.14 </x-m>
-      <y-m>  -0.47 </y-m>
-      <z-m>  -0.53 </z-m>
+      <x-m> -11.01 </x-m>
+      <y-m>  -0.53 </y-m>
+      <z-m>  -0.67 </z-m>
     </offsets>
   </model>
   
-  <!-- Seat copilote -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
     <offsets>
-      <x-m> -11.14 </x-m>
-      <y-m>   0.47 </y-m>
-      <z-m>  -0.53 </z-m>
+      <x-m> -11.01 </x-m>
+      <y-m>   0.53 </y-m>
+      <z-m>  -0.67 </z-m>
     </offsets>
   </model>
   
@@ -109,7 +130,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
   <!-- Emergency door -->
   <animation>
     <type>pick</type>
@@ -144,5 +165,38 @@
       <z> 0 </z>
     </axis>
   </animation>
-
+  
+  <!-- Cargo door -->
+  <animation>
+    <type>pick</type>
+    <object-name>intcargo</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.cargo.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>intcargo</object-name>
+    <property>sim/model/door-positions/cargo/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 80 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  7.08497 </x1-m>
+      <y1-m> -1.11229 </y1-m>
+      <z1-m> -0.35925 </z1-m>
+      <x2-m>  7.63920 </x2-m>
+      <y2-m> -1.09192 </y2-m>
+      <z2-m> -0.35941 </z2-m>
+    </axis>
+  </animation>
+  
 </PropertyList>

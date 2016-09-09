@@ -6,10 +6,9 @@
 
   <animation>
     <!-- Objets opaques -->
-    <object-name>seat</object-name>
+    <object-name>seatR</object-name>
 
     <!-- Objets transparents -->
   </animation>
 
 </PropertyList>
-
