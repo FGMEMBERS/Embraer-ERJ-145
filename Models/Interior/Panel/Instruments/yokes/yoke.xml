@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+  
+  <path>yoke.ac</path> 
+  
+  <animation>
+    <object-name>yokes.pitch</object-name>
+    <object-name>yoke.roll</object-name>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>yokes.pitch</object-name>
+    <object-name>yoke.roll</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -0.1 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>yoke.roll</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -15 </factor>
+    <center>
+      <x-m> 0.00000 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.31849 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>
