@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!--    FMZ P2000    -->
+<!--    FMZ2000    -->
 <PropertyList>
   
   <params>
@@ -99,9 +99,9 @@
   <text>
     <name>Page</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.062</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.062 </z-m>
     </offsets>
     <alignment>center-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -117,13 +117,12 @@
   </text>
   
   <!-- left column -->
-  
   <text>
     <name>L0</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.055</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.055 </z-m>
     </offsets>
     <alignment>left-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -141,9 +140,9 @@
   <text>
     <name>L1</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.048</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.048 </z-m>
     </offsets>
     <alignment>left-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -161,9 +160,9 @@
   <text>
     <name>L2</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.041</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.041 </z-m>
     </offsets>
     <alignment>left-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -181,9 +180,9 @@
   <text>
     <name>L3</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.034</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.034 </z-m>
     </offsets>
     <alignment>left-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -201,9 +200,9 @@
   <text>
     <name>L4</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.026</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.026 </z-m>
     </offsets>
     <alignment>left-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -221,9 +220,9 @@
   <text>
     <name>L5</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.019</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.019 </z-m>
     </offsets>
     <alignment>left-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -239,13 +238,12 @@
   </text>
   
   <!-- Right column-->
-  
   <text>
     <name>R0</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.055</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.055 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -263,9 +261,9 @@
   <text>
     <name>R1</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.048</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.048 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -283,9 +281,9 @@
   <text>
     <name>R2</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.041</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.041 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -303,9 +301,9 @@
   <text>
     <name>R3</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.034</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.034 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -323,9 +321,9 @@
   <text>
     <name>R4</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.026</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.026 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -343,9 +341,9 @@
   <text>
     <name>R5</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.019</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.019 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -361,13 +359,12 @@
   </text>
   
   <!-- scratchpad -->
-  
   <text>
     <name>S0</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>-0.048</y-m>
-      <z-m>0.011</z-m>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.048 </y-m>
+      <z-m>  0.011 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -385,9 +382,9 @@
   <text>
     <name>S1</name>
     <offsets>
-      <x-m>0.003</x-m>
-      <y-m>0.048</y-m>
-      <z-m>0.011</z-m>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.048 </y-m>
+      <z-m> 0.011 </z-m>
     </offsets>
     <alignment>right-center</alignment>
     <axis-alignment>yz-plane</axis-alignment>
@@ -401,7 +398,6 @@
       <height type="int">32</height>
     </font-resolution>
   </text>
-  
   
   <animation>
     <type>select</type>
@@ -428,8 +424,6 @@
     </condition>
   </animation>
   
-  
-  
   <animation>
     <name>green</name>
     <type>material</type>
@@ -452,19 +446,19 @@
       <alpha-prop>sim/color-set/green/a</alpha-prop>
     </emission>
     <ambient>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </ambient>
     <diffuse>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </diffuse>
     <specular>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </specular>
   </animation>
   
@@ -481,19 +475,19 @@
       <alpha-prop>sim/color-set/cyan/a</alpha-prop>
     </emission>
     <ambient>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </ambient>
     <diffuse>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </diffuse>
     <specular>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
+      <red>   0 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
     </specular>
   </animation>
   

@@ -3,111 +3,113 @@
 # ie: var primus = P1000.new(prop);
 
 var P1000 = {
-    new : func(prop){
-        var m = { parents : [P1000]};
-        m.FMS_VNAV =["VNV","FMS"];
-        m.NAV_SRC = ["VOR1","VOR2","ILS1","ILS2","FMS"];
-        m.NAV_PTR_SRC = [" ","NAV","ADF","FMS"];
-        m.TIMER_MSG1 = ["GSPD","TTG","ET"];
-        m.TIMER_MSG2 = ["KTS","MIN","   "];
-        m.RNG_STEP = [5,10,25,50,100,200,300,600,1200];
-        m.MFD_MENU1 = ["                       VNAV     VSPEED     TERR     FMS",
-        "            RTN       FMS      SNGP",
-        "            RTN       CNCL",
-        "SET      RTN        TO        ST EL     VANG        VS",
-        "            RTN                      T/O       LNDG",
-        "SET      RTN        V1          VR          V2",
-        "SET      RTN      VREF      VAPP"];
-        m.dh=200;
+  new : func(prop){
+    var m = { parents : [P1000]};
+    m.FMS_VNAV =["VNV","FMS"];
+    m.NAV_SRC = ["VOR1","VOR2","ILS1","ILS2","FMS"];
+    m.NAV_PTR_SRC = [" ","NAV","ADF","FMS"];
+    m.TIMER_MSG1 = ["GSPD","TTG","ET"];
+    m.TIMER_MSG2 = ["KTS","MIN","   "];
+    m.RNG_STEP = [5,10,25,50,100,200,300,600,1200];
+    m.MFD_MENU1 = ["                       VNAV     VSPEED     TERR     FMS",
+    "            RTN       FMS      SNGP",
+    "            RTN       CNCL",
+    "SET      RTN        TO        ST EL     VANG        VS",
+    "            RTN                      T/O       LNDG",
+    "SET      RTN        V1          VR          V2",
+    "SET      RTN      VREF      VAPP"];
+    m.dh=200;
 
-        m.primus = props.globals.getNode("instrumentation/"~prop,1);
-        m.PFD = m.primus.getNode("pfd",1);
-            m.PFD_serv = m.PFD.initNode("serviceable",1,"BOOL");
-            m.PFD_bright = m.PFD.initNode("dimmer",0.8,"DOUBLE");
-            m.PFD_ptr1_src = m.PFD.initNode("nav1-ptr-source",m.NAV_PTR_SRC[0],"STRING");
-            m.PFD_ptr2_src = m.PFD.initNode("nav2-ptr-source",m.NAV_PTR_SRC[0],"STRING");
-            m.PFD_timer_msg1 = m.PFD.initNode("timer-label",m.TIMER_MSG1[0],"STRING");
-            m.PFD_timer_msg2 = m.PFD.initNode("timer-units",m.TIMER_MSG2[0],"STRING");
+    m.primus = props.globals.getNode("instrumentation/"~prop,1);
+    m.PFD = m.primus.getNode("pfd",1);
+    m.PFD_serv = m.PFD.initNode("serviceable",1,"BOOL");
+    m.PFD_bright = m.PFD.initNode("dimmer",0.8,"DOUBLE");
+    m.PFD_ptr1_src = m.PFD.initNode("nav1-ptr-source",m.NAV_PTR_SRC[0],"STRING");
+    m.PFD_ptr2_src = m.PFD.initNode("nav2-ptr-source",m.NAV_PTR_SRC[0],"STRING");
+    m.PFD_timer_msg1 = m.PFD.initNode("timer-label",m.TIMER_MSG1[0],"STRING");
+    m.PFD_timer_msg2 = m.PFD.initNode("timer-units",m.TIMER_MSG2[0],"STRING");
 
-        m.MFD = m.primus.initNode("mfd",1);
-            m.MFD_serv = m.MFD.initNode("serviceable",1,"BOOL");
-            m.MFD_bright = m.MFD.initNode("dimmer",0.8,"DOUBLE");
-            m.MFD_menu_num = m.MFD.initNode("menu-num",0,"INT");
-            m.MFD_menu_line1 = m.MFD.initNode("menu-text",m.MFD_MENU1[0],"STRING");
-            m.MFD_menu_col1 = m.MFD.initNode("menu-val[0]","     ","STRING");
-            m.MFD_menu_col2 = m.MFD.initNode("menu-val[1]","     ","STRING");
-            m.MFD_menu_col3 = m.MFD.initNode("menu-val[2]","     ","STRING");
-            m.MFD_menu_col4 = m.MFD.initNode("menu-val[3]","     ","STRING");
-            m.MFD_settings = m.MFD.initNode("settings",1);
-                m.MFD_to = m.MFD_settings.initNode("to",0.0);
-                m.MFD_st_el = m.MFD_settings.initNode("st-el",0.0);
-                m.MFD_vang = m.MFD_settings.initNode("vang",0.0);
-                m.MFD_vs = m.MFD_settings.initNode("vs",0.0);
-                m.MFD_v1 = m.MFD_settings.initNode("v1",0.0);
-                m.MFD_vr = m.MFD_settings.initNode("vr",0.0);
-                m.MFD_v2 = m.MFD_settings.initNode("v2",0.0);
-                m.MFD_vref = m.MFD_settings.initNode("vref",0.0);
-                m.MFD_vapp = m.MFD_settings.initNode("vapp",0.0);
+    m.MFD = m.primus.initNode("mfd",1);
+    m.MFD_serv = m.MFD.initNode("serviceable",1,"BOOL");
+    m.MFD_bright = m.MFD.initNode("dimmer",0.8,"DOUBLE");
+    m.MFD_menu_num = m.MFD.initNode("menu-num",0,"INT");
+    m.MFD_menu_line1 = m.MFD.initNode("menu-text",m.MFD_MENU1[0],"STRING");
+    m.MFD_menu_col1 = m.MFD.initNode("menu-val[0]","     ","STRING");
+    m.MFD_menu_col2 = m.MFD.initNode("menu-val[1]","     ","STRING");
+    m.MFD_menu_col3 = m.MFD.initNode("menu-val[2]","     ","STRING");
+    m.MFD_menu_col4 = m.MFD.initNode("menu-val[3]","     ","STRING");
+    m.MFD_settings = m.MFD.initNode("settings",1);
+    m.MFD_to = m.MFD_settings.initNode("to",0.0);
+    m.MFD_st_el = m.MFD_settings.initNode("st-el",0.0);
+    m.MFD_vang = m.MFD_settings.initNode("vang",0.0);
+    m.MFD_vs = m.MFD_settings.initNode("vs",0.0);
+    m.MFD_v1 = m.MFD_settings.initNode("v1",0.0);
+    m.MFD_vr = m.MFD_settings.initNode("vr",0.0);
+    m.MFD_v2 = m.MFD_settings.initNode("v2",0.0);
+    m.MFD_vref = m.MFD_settings.initNode("vref",0.0);
+    m.MFD_vapp = m.MFD_settings.initNode("vapp",0.0);
 
-        m.EICAS = m.primus.initNode("eicas");
-            m.EICAS_serv = m.EICAS.initNode("serviceable",1,"BOOL");
+    m.EICAS = m.primus.initNode("eicas");
+    m.EICAS_serv = m.EICAS.initNode("serviceable",1,"BOOL");
 
-        m.Control = m.primus.initNode("control");
-            m.ctl_tcas = m.Control.initNode("tcas",0,"BOOL");
-            m.ctl_hsi = m.Control.initNode("hsi",0,"BOOL");
-            m.ctl_cp = m.Control.initNode("cp",0,"BOOL");
-            m.ctl_hpa = m.Control.initNode("hpa",0,"BOOL");
-            m.ctl_gspd = m.Control.initNode("timer",0,"INT");
-            m.ctl_nav = m.Control.initNode("nav",0,"INT");
-            m.ctl_fms = m.Control.initNode("fms",0,"BOOL");
-            m.ctl_RA = m.Control.initNode("RA-alert",1,"BOOL");
-            m.ctl_rng = m.Control.initNode("rng-switch",0.0);
-            m.DH = m.Control.initNode("decision-height",m.dh,"DOUBLE");
-            setprop("instrumentation/mk-viii/inputs/arinc429/decision-height",m.dh);
-            setprop("autopilot/route-manager/min-lock-altitude-agl-ft",m.dh);
-            m.NavPtr1 =m.Control.initNode("nav1ptr",0.0);
-            m.NavPtr2 =m.Control.initNode("nav2ptr",0.0);
-            m.NavPtr1_offset =m.PFD.initNode("nav1ptr-hdg-offset",0.0);
-            m.NavPtr2_offset =m.PFD.initNode("nav2ptr-hdg-offset",0.0);
+    m.Control = m.primus.initNode("control");
+    m.ctl_tcas = m.Control.initNode("tcas",0,"BOOL");
+    m.ctl_hsi = m.Control.initNode("hsi",0,"BOOL");
+    m.ctl_cp = m.Control.initNode("cp",0,"BOOL");
+    m.ctl_hpa = m.Control.initNode("hpa",0,"BOOL");
+    m.ctl_gspd = m.Control.initNode("timer",0,"INT");
+    m.ctl_nav = m.Control.initNode("nav",0,"INT");
+    m.ctl_fms = m.Control.initNode("fms",0,"BOOL");
+    m.ctl_RA = m.Control.initNode("RA-alert",1,"BOOL");
+    m.ctl_rng = m.Control.initNode("rng-switch",0.0);
+    m.DH = m.Control.initNode("decision-height",m.dh,"DOUBLE");
+    setprop("instrumentation/mk-viii/inputs/arinc429/decision-height",m.dh);
+    setprop("autopilot/route-manager/min-lock-altitude-agl-ft",m.dh);
+    m.NavPtr1 =m.Control.initNode("nav1ptr",0.0);
+    m.NavPtr2 =m.Control.initNode("nav2ptr",0.0);
+    m.NavPtr1_offset =m.PFD.initNode("nav1ptr-hdg-offset",0.0);
+    m.NavPtr2_offset =m.PFD.initNode("nav2ptr-hdg-offset",0.0);
 
-        m.CRStype =m.primus.initNode("course-string","CRS");
-        m.CRSheading =m.primus.initNode("course-heading",0.0);
-        m.GS_inrange =m.primus.initNode("GS-in-range",0,"BOOL");
-        m.GS_deflection =m.primus.initNode("GS-deflection",0.0);
-        m.CRSdeflection =m.primus.initNode("course-deflection",0.0);
-        m.NavDist =m.primus.initNode("nav-dist-nm",0.0);
-        m.NavType =m.primus.initNode("nav-type",0,"INT");
-        m.NavString =m.primus.initNode("nav-string","VOR1");
-        m.NavTime =m.primus.initNode("nav-time","- - : - -");
-        m.NavID =m.primus.initNode("nav-id"," ");
-        m.fms_mode=m.primus.initNode("fms-mode",m.FMS_VNAV[0],"STRING");
-        m.FDmode = m.primus.initNode("fdmode",1,"BOOL");
-        m.baro_mode=m.primus.initNode("baro-mode",1,"BOOL");
-        m.baro_kpa = m.primus.initNode("baro-kpa","      ");
-        m.IAS = props.globals.getNode("instrumentation/airspeed-indicator/indicated-speed-kt",1);
-        m.ALT = props.globals.getNode("instrumentation/altimeter/indicated-altitude-ft",1);
-        setprop("/instrumentation/kr-87/inputs/adf-btn",1);
+    m.CRStype =m.primus.initNode("course-string","CRS");
+    m.CRSheading =m.primus.initNode("course-heading",0.0);
+    m.GS_inrange =m.primus.initNode("GS-in-range",0,"BOOL");
+    m.GS_deflection =m.primus.initNode("GS-deflection",0.0);
+    m.CRSdeflection =m.primus.initNode("course-deflection",0.0);
+    m.NavDist =m.primus.initNode("nav-dist-nm",0.0);
+    m.NavType =m.primus.initNode("nav-type",0,"INT");
+    m.NavString =m.primus.initNode("nav-string","VOR1");
+    m.NavTime =m.primus.initNode("nav-time","- - : - -");
+    m.NavID =m.primus.initNode("nav-id"," ");
+    m.fms_mode=m.primus.initNode("fms-mode",m.FMS_VNAV[0],"STRING");
+    m.FDmode = m.primus.initNode("fdmode",1,"BOOL");
+    m.baro_mode=m.primus.initNode("baro-mode",1,"BOOL");
+    m.baro_kpa = m.primus.initNode("baro-kpa","      ");
+    m.IAS = props.globals.getNode("instrumentation/airspeed-indicator/indicated-speed-kt",1);
+    m.ALT = props.globals.getNode("instrumentation/altimeter/indicated-altitude-ft",1);
+    setprop("/instrumentation/kr-87/inputs/adf-btn",1);
     return m;
-    },
-#### pointer needle update ####
-    get_pointer_offset : func(test,src){
-        var hdg = getprop("/orientation/heading-magnetic-deg");
-        var offset = 0;
-        if(test==0 or test == nil)return 0.0;
-        if(test == 1){
-            offset=getprop("/instrumentation/nav["~src~"]/heading-deg") or 0;
-            offset -= hdg;
-            if(offset < -180){offset += 360;}
-            elsif(offset > 180){offset -= 360;}
-        }elsif(test == 2){
-            offset = getprop("/instrumentation/adf/indicated-bearing-deg");
-        }elsif(test == 3){
-            offset = getprop("/autopilot/internal/true-heading-error-deg");
-        }
-        return offset;
-    },
-#### control inputs ####
-    ctl_set : func(dc){
+  },
+  
+  #### pointer needle update ####
+  get_pointer_offset : func(test,src){
+    var hdg = getprop("/orientation/heading-magnetic-deg");
+    var offset = 0;
+    if(test==0 or test == nil)return 0.0;
+    if(test == 1){
+      offset=getprop("/instrumentation/nav["~src~"]/heading-deg") or 0;
+      offset -= hdg;
+      if(offset < -180){offset += 360;}
+      elsif(offset > 180){offset -= 360;}
+    }elsif(test == 2){
+      offset = getprop("/instrumentation/adf/indicated-bearing-deg");
+    }elsif(test == 3){
+      offset = getprop("/autopilot/internal/true-heading-error-deg");
+    }
+    return offset;
+  },
+  
+  #### control inputs ####
+  ctl_set : func(dc){
         var tmp = 0;
         if(dc == "tcas"){
             tmp = me.ctl_tcas.getBoolValue();
