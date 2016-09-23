@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="views.xml">
+
+    <fuel-fraction>0.3</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Embraer-ERJ-145/erj145-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Embraer-ERJ-145/Sounds/erj145-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Embraer-ERJ-145/Models/erj145.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int n="0" type="int">  0 </int>                                              <!--  0 immat -->
+        <int n="1" type="int">  0 </int>                                              <!--  1 immat -->
+        <int n="2" type="int">  0 </int>                                              <!--  2 immat -->
+        <int n="3" type="int">  0 </int>                                              <!--  3 immat -->
+        <int n="4" type="int">  0 </int>                                              <!--  4 immat -->
+        <int n="5" type="int">  0 </int>                                              <!--  5 immat -->
+        <int n="6" type="bool"> 1 </int>                                              <!-- 6 smoke/bomb/torpedo -->
+        <int n="7" type="int" alias="/sim/model/merchantman">0</int>                  <!-- 7 Mode 0=passenger 1=Mixte 2=Cargo -->
+        <int n="8" type="int" alias="/systems/electrical/outputs/nav-lights">0</int>  <!-- 8 nav-lights -->
+        <int n="9" type="int" alias="/sim/model/lights/beacon/state">false</int>      <!-- 9 strobe-lights -->
+        <int n="10" type="int" alias="/controls/electric/key-pos">0</int>             <!-- 10 key position -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                         <!-- altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft"> 0 </float>                        <!-- altitude for Smoke/Trail -->
+        <float n="4" alias="/engines/engine[0]/n1"/>
+        <float n="5" alias="/engines/engine[1]/n1"/>
+        <float n="6" alias="/engines/engine[0]/n2"/>
+        <float n="7" alias="/engines/engine[1]/n2"/>
+        <float n="8" alias="/gear/gear[0]/wow/"/>
+        <float n="9" alias="/gear/gear[1]/wow/"/>
+        <float n="10" alias="/gear/gear[2]/wow/"/>
+        <float n="11" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="12" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="13" alias="/gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+    
+    <instrumentation include="instrumentation.xml"/>
+    
+    <help include="help.xml"/>
+    
+    <menubar include="../Dialogs/erj145-menu.xml"/>
+
+    <flaps include="flaps.xml"/>
+
+    <!-- Buck notes: User adjustable payloads -->
+    <weight n="0">
+      <name>Forward rows</name>
+      <weight-lb>1800</weight-lb> 
+      <max-lb>2500</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+    <weight n="1">
+      <name>Middle rows</name>
+      <weight-lb>6000</weight-lb> 
+      <max-lb>7000</max-lb>
+      <min-lb>0</min-lb>      
+    </weight>
+    <weight n="2">
+      <name>Aft rows</name>
+      <weight-lb>1800</weight-lb> 
+      <max-lb>2500</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+    <weight n="3">
+      <name>Baggage</name>
+      <weight-lb>625</weight-lb> 
+      <max-lb>1000</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+
+  </sim>
+  
+  <instrumentation include="systems.xml"/>
+  
+  <input include="erj145-keyboard.xml"/>
+
+  <controls include="controls.xml"/>
+
+  <!--
+  <consumables include="consumables.xml"/>
+  -->
+  
+  <nasal>
+    <doors>
+      <file>Aircraft/Embraer-ERJ-145/Nasal/doors.nas</file>
+    </doors>
+    <erj145>
+      <file>Aircraft/Embraer-ERJ-145/Nasal/light.nas</file>
+      <file>Aircraft/Embraer-ERJ-145/Nasal/liveries.nas</file>
+<!--  <file>Aircraft/Embraer-ERJ-145/Nasal/immat.nas</file> -->
+      <file>Aircraft/Embraer-ERJ-145/Nasal/erj145.nas</file>
+      <file>Aircraft/Embraer-ERJ-145/Nasal/Electrical.nas</file>
+    </erj145>
+    <efis>
+      <file>Aircraft/Embraer-ERJ-145/Nasal/P1000.nas</file>
+    </efis>
+    <engines>
+      <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+      <file>Aircraft/Embraer-ERJ-145/Nasal/engines-yasim.nas</file>
+    </engines>
+  </nasal>
+   
+</PropertyList>

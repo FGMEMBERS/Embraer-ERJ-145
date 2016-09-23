@@ -1,0 +1,65 @@
+<cossack> 
+  1. The plane doesn't hold wings straight, it spins around fast, but hold a hdg when set (autopilot) Note: i deleted all autopilot references
+  2. The plane bounce on high speed, just like tu-134 did before 
+</cossack>
+    
+<buck>  
+I'm not sure about #1, I'd have to try flying the aircraft first. 
+#2 is typical of many low-effort YASim FDMs. It happens for a number of reasons, often because a 
+wing develops too much lift at cruise speed, or an elevator is assigned too much lift to get a YASim 
+solution, often compensating for other FDM problems, etc.
+
+I had a very quick look at the FDM. It will need a lot of work. Some thoughts that may help:
+
+The YASim solver shows a Lift Ratio of 525. This is much too high. Numbers like that mean the aircraft is /very/ slick-- it will not fly realistically 
+and will be difficult to slow down. Lift Ratio will need to be brought down to the 100-150 range before the FDM will be reasonable for this sort of jet. 
+Lower numbers will generally give better results.
+
+Aircraft mass: This appears to be set for zero-fuel weight of a 145XR. It would be better if the aircraft had <weight> and <solve-weight> settings, and 
+the aircraft mass represented an empty mass. This would allow users to adjust the payload and experience the aircraft at various weights.
+
+Approach settings: An Approach AoA of 8 is probably 3 or 4 degrees too high. Airliners have fairly low approach angles for good runway visibility and 
+other reasons. A YASim "approach" actually represents a stall, the aircraft's low-speed performance bracket, so flaps and slats are best deployed at 
+their full range (1.0). Slats should be set to 1 for landing-- this is imporant for proper stall characteristics. I'd set approach fuel to something 
+close to typical for landing, maybe 0.2 or 0.3.
+
+Cruise setttings work best when they represent the aircraft's typical top-end peformance. I would set engines to max throttle and make sure cruise 
+speed is the max level speed at altitude. Fuel is OK at 0.7. Flaps, slats, and gear should all be set to 0.
+
+Wing (and primary mstab) settings: For an regional airliner, try a stall AoA of 12 or so. Slat AoA of 2 is OK. With no wing incidence or twist, this 
+means with slats deployed the aircraft will stall at 14 degrees alpha, 12 without slats deployed. Slat control settings appear to be tied to flap output 
+via flap-pos-norm-- I'm not sure YASim will like this, maybe it will, but in my opinion slats should have their own unique control parameter, with 
+that paramter slaved to flap settings outside of the FDM. Stall widths should not be so extreme (1?)-- try a value in the 4-6 range, maybe 5. 
+No twist is shown in the FDM, but there will always be some aerodynamic twist so that the aircraft begins to stall before the ailerons lose control. 
+A twist of -2 in the <wing> makes a good guess. Also, aileron lift looks too great at 1.3; that will make the aircraft much too responsive. 
+I suggest a value of 1.15. I'd reduce flap lift slightly and increase flap lift. Flaps should mostly generate drag, if we ignore camber and chord 
+effects, which YASim unfortunately doesn't yet simulate.
+
+I would eliminate the second mstab (the one that has a length of 1.1). This is someone's idea of representing winglets, 
+but many people don't understand what winglets actually do. The point is to reduce wing inefficiences drag due to vortex effets. 
+This is best done by tweaking other wing parameters rather than adding new wing surfaces which just makes YASim perform more 
+calculations for no benefit. It's best to keep the YASim FDM simple and get the fundamental aspects right.
+
+hstab and vstab: Again, a stall AoA of 20 is much too high. The stabilizer should stall after the wing, so a value of 15 or 16 should work. 
+Stall widths of about 4 are reasonable. Leave peaks at 1.5. Also, unless you know otherwise, drag values should match or exceed lift values 
+for any control surface.
+
+The engine nacelle fuselage elements should generally be smaller than actual size-- by design these have very little drag or mass, and their 
+lateral effects aren't that significant.
+
+I don't know much about the engines used (except I think they're made not far from where I live!), but a specific fuel consumption of 0.65 
+is too high for a turbofan. Try something like 0.55 or 0.54 for more reasonable economy. The action point is a little too far aft at -9.77. 
+Thrust is applied not at the very rear of the engine, but at the forward portion of the thrust chamber in turbojets, and much more forward 
+than that in turbofans (at the fan thrust bearings). Try the midpoint of the engine nacelle for more reasonable results. YASim doesn't 
+simulate turbofans very well, so you may have to play with "exhaust-speed" to get more reasonable cruise performance without having huge 
+numbers for Lift Ratio.
+
+I have no idea if the CG is correctly placed. This is important to get right. It's also important to place fuel tanks reasonable. Airliner 
+fuel tanks are usually positioned in the forward position of the CG range. In the FDM, the center tank looks incorrectly positioned, being 
+too far forward. Since the fuel capacity of a 145XR is at least 5187 kg/11435 lbs (probably more with an additional central tank), the fuel 
+settings appear to be wrong. I'm guessing the fuel tanks haven't been researced for this FDM.
+
+Hope these thoughts give you some ideas.
+
+-Buck
+</buck>

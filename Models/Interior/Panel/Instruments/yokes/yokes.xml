@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/yokes/yoke.xml</path>
+    <offsets>
+      <x-m>  0.19528 </x-m>
+      <y-m> -0.51934 </y-m>
+      <z-m> -0.59850 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/yokes/yoke.xml</path>
+    <offsets>
+      <x-m>  0.19528 </x-m>
+      <y-m>  0.51934 </y-m>
+      <z-m> -0.59850 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>

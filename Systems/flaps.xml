@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Buck notes: Flap detents -->
+  <setting> 0.0 </setting>
+  <setting> 0.2 </setting> <!--  9 deg -->
+  <setting> 0.4 </setting> <!-- 18 deg -->
+  <setting> 0.5 </setting> <!-- 22 deg -->
+  <setting> 1.0 </setting> <!-- 45 deg -->
+  
+</PropertyList>
