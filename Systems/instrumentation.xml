@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!--
      *************************************************************************
@@ -119,5 +119,13 @@
     <number>0</number>
     <symbols include="tcas-display.xml"/>
   </navigation-display>
-  
+
+      <cdu n="0">
+          <input type="string"/>
+          <serviceable type="bool">1</serviceable>
+          <ident>
+              <model>Embraer 145</model>
+          </ident>
+      </cdu>
+
 </PropertyList>

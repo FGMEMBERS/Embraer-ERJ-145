@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Author   : Syd Adams
      Primus 2000 EICAS
@@ -51,16 +51,24 @@
     <object-name>gear1.annun</object-name>
     <object-name>gear0.annun</object-name>
     <object-name>gear2.annun</object-name>
-    <condition>
-      <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   1 </red>
-      <green> 1 </green>
-      <blue>  1 </blue>
-    </emission>
+	<ambient>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</ambient>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</diffuse>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</emission>
   </animation>
   
   <panel>

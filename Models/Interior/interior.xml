@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -30,21 +30,6 @@
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>intvitres</object-name>
   </effect>
-  
-  <!-- Pilote -->
-  <model>
-    <path>Aircraft/Embraer-ERJ-145/Models/Pilot/pilot.xml</path>
-    <offsets>
-      <x-m> -11.29643 </x-m>
-      <y-m>  -0.47000 </y-m>
-      <z-m>  -0.56928 </z-m>
-    </offsets>
-	        <condition>
-                <not>
-                    <property>sim/current-view/internal</property>
-                </not>        
-        </condition>
-  </model>
 
   <!-- Tableau de bord -->
   <model>
@@ -56,7 +41,7 @@
     </offsets>
   </model>
 
-  <!-- Les sièges -->
+  <!-- Les siges -->
   <model>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Seats/all-seats.xml</path>
   </model>
@@ -85,29 +70,10 @@
       <blue>  0.4 </blue>
     </emission>
   </animation>
-  <!-- Seat pilote -->
-  <!--<model>
-    <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
-    <offsets>
-      <x-m> -11.0 </x-m>
-      <y-m>  -0.46 </y-m>
-      <z-m>  -0.55 </z-m>
-    </offsets>
-  </model>-->
-  
-  <!-- Seat copilote -->
-  <!--<model>
-    <path>Aircraft/Embraer-ERJ-145/Models/Interior/PilotSeat/seat.xml</path>
-    <offsets>
-      <x-m> -11.0 </x-m>
-      <y-m>   0.52 </y-m>
-      <z-m>  -0.55 </z-m>
-    </offsets>
-  </model>-->
   
    <!-- Pilot Seats, Yoke, Pedals -->
   <model>
-    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Yoke+Pedal+PSeat/seatyokepedal.ac</path>
+    <path>Aircraft/Embraer-ERJ-145/Models/Interior/seatyokepedal.ac</path>
     <offsets>
       <x-m> -15.5 </x-m>
       <y-m>   -0.0 </y-m>
