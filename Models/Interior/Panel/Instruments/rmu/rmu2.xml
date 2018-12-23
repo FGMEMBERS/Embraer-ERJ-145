@@ -7,10 +7,10 @@
 
 <!--#########  Screens/Lamps ########## -->
 
-    <effect>
-        <inherits-from>Aircraft/Embraer-ERJ-145/Models/Effects/lcd/e145-lcd2</inherits-from>
-        <object-name>RMU2.screen</object-name>
-    </effect>
+	<effect>
+		<inherits-from>Aircraft/Embraer-ERJ-145/Models/Effects/lcd/e145-lcd2</inherits-from>
+		<object-name>RMU2.screen</object-name>
+	</effect>
     <animation>
 	<type>material</type>
 	<object-name>RMU2.screen</object-name>

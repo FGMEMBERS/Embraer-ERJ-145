@@ -19,6 +19,15 @@ var canvas_rmusetup = {
 		m.tcasd_sw.setText("ENABLED");
 		m.tcasr_sw.setText("ENABLED");
 
+		setlistener("instrumentation/rmu["~m.Instance~"]/autoBright", func{
+			if((getprop("instrumentation/rmu["~m.Instance~"]/autoBright") or 0)) {
+				m.auto_sw.setText("ENABLED");
+			}
+			else {
+				m.auto_sw.setText("DISABLED");
+			}
+		});
+
 		return m;
 	},
 	BtClick: func(input = -1) {
@@ -69,11 +78,11 @@ var canvas_rmusetup = {
 		if(input == 8 or input == 9) {
 			if(getprop("instrumentation/rmu["~me.Instance~"]/autoBright") or 0) {
 				setprop("instrumentation/rmu["~me.Instance~"]/autoBright", 0);
-				me.auto_sw.setText("DISABLED");
+#				me.auto_sw.setText("DISABLED");
 			}
 			else {
 				setprop("instrumentation/rmu["~me.Instance~"]/autoBright", 1);
-				me.auto_sw.setText("ENABLED");
+#				me.auto_sw.setText("ENABLED");
 			}
 		}
 		if(input == 10) {
