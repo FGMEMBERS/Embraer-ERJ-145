@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -79,16 +79,31 @@
     <object-name>from-flag</object-name>
     <object-name>to-flag</object-name>
     <object-name>gs.needle</object-name>
-    <condition>
-      <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   1 </red>
-      <green> 1 </green>
-      <blue>  1 </blue>
-    </emission>
+    <object-name>alt.d1</object-name>
+    <object-name>alt.d2</object-name>
+    <object-name>alt.d3</object-name>
+    <object-name>alt.d4</object-name>
+    <object-name>ias.d1</object-name>
+    <object-name>ias.d2</object-name>
+    <object-name>ias.d3</object-name>
+	<ambient>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</ambient>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</diffuse>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</emission>
   </animation>
   
   <animation>

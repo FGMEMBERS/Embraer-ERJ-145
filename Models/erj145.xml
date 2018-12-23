@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -206,7 +206,7 @@
     </offsets>
   </model>
   
-  <!-- Intérieur -->
+  <!-- Interior -->
   <model>
     <usage>interior</usage>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/interior.xml</path>
@@ -300,7 +300,7 @@
     </offsets>
   </model>
   
-  <!-- Rotation des hélices des réacteurs -->
+  <!-- Rotation des helices des reacteurs -->
   <animation>
     <type>spin</type>
     <object-name>heliceG</object-name>
@@ -892,7 +892,7 @@
     </axis>
   </animation>
   
-  <!-- Rentré des roues -->
+  <!-- Rentre des roues -->
   <animation>
     <name>TrainAvant</name>
     <object-name>axeAH</object-name>

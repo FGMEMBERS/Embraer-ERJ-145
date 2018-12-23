@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Author : Syd Adams
               Primus 1000 MFD
@@ -62,16 +62,25 @@
     <object-name>MFD.hdg</object-name>
     <object-name>MFD.bug</object-name>
     <object-name>MFD.ete</object-name>
-    <condition>
-      <property>controls/lighting/instrument-lights</property>
-      <property>/controls/electric/battery-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   1 </red>
-      <green> 1 </green>
-      <blue>  1 </blue>
-    </emission>
+    <object-name>MFD.sat</object-name>
+	<ambient>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</ambient>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</diffuse>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+		<factor-prop>systems/electrical/outputs/efis</factor-prop>
+	</emission>
   </animation>
   
   <panel>
@@ -94,6 +103,14 @@
     </top-left>
   </panel>
   
+  <animation>
+    <type>select</type>
+    <object-name>panel-area</object-name>
+    <condition>
+        <property>systems/electrical/outputs/efis</property>
+    </condition>
+  </animation>
+
   <model>
     <name>Mtext3d</name>
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/Mtext3d.xml</path>

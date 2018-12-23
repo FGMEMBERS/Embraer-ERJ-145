@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -129,6 +129,30 @@
     <efis>
       <file>Aircraft/Embraer-ERJ-145/Nasal/P1000.nas</file>
     </efis>
+      <rmu>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/frequencies.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/pagemenu.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/memorycom.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/memorynav.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/navigation.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/engine1jet.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/engine2.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/atctcas.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/mls.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/maintenance.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/strapsmenu.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/straps.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/maintlogmenu.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/maintlog.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/software.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/rmusetup.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/displaydim.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/RMU.nas</file>
+      </rmu>
+      <cdu>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/cdu/CDU.nas</file>
+         <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/cdu/CDUpages.nas</file>
+      </cdu>
     <engines>
       <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
       <file>Aircraft/Embraer-ERJ-145/Nasal/engines-yasim.nas</file>

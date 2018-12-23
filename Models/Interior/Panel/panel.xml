@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Source : http://cdn-www.airliners.net/aviation-photos/photos/0/0/8/1184800.jpg -->
 
@@ -7,21 +7,12 @@
   <path>panel.ac</path>
 
   <animation>
-    <!-- Objets opaques -->
     <object-name>panel</object-name>
-
-    <!-- Objets transparents -->
+	<object-name>pedestal</object-name>
+	<object-name>trouspedestal</object-name>
+	<object-name>throttleG</object-name>
+	<object-name>throttleD</object-name>
   </animation>
-
-  <!-- PEDESTAL -->
-  <model>
-    <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Pedestal/pedestal.xml</path>
-    <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.173 </z-m>
-    </offsets>
-  </model>
   
   <!-- PFD -->
   <model>
@@ -29,8 +20,8 @@
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/pfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
-      <y-m> -0.495 </y-m>
-      <z-m> -0.025 </z-m>
+      <y-m> -0.501 </y-m>
+      <z-m> -0.023 </z-m>
     </offsets>
   </model>
   
@@ -39,8 +30,8 @@
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/pfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
-      <y-m>  0.495 </y-m>
-      <z-m> -0.025 </z-m>
+      <y-m>  0.493 </y-m>
+      <z-m> -0.023 </z-m>
     </offsets>
   </model>
   
@@ -50,8 +41,8 @@
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/mfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
-      <y-m> -0.305 </y-m>
-      <z-m> -0.025 </z-m>
+      <y-m> -0.313 </y-m>
+      <z-m> -0.023 </z-m>
     </offsets>
   </model>
   
@@ -60,7 +51,7 @@
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/mfd/mfd3d.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
-      <y-m>  0.305 </y-m>
+      <y-m>  0.303 </y-m>
       <z-m> -0.025 </z-m>
     </offsets>
   </model>
@@ -70,9 +61,81 @@
     <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/eicas/eicas.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
+      <y-m>  0.003 </y-m>
       <z-m> -0.025 </z-m>
     </offsets>
   </model>
-  
+
+<model>
+  <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/rmu1.xml</path>
+  <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.159 </y-m>
+      <z-m> -0.077 </z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/rmu2.xml</path>
+  <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.151 </y-m>
+      <z-m> -0.077 </z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/cdu/cdu.xml</path>
+  <offsets>
+	<x-m>  0.088 </x-m>
+	<y-m> -0.075 </y-m>
+	<z-m> -0.224 </z-m>
+	<pitch-deg> -61 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/cdu/cdu1.xml</path>
+  <offsets>
+	<x-m>  0.088 </x-m>
+	<y-m>  0.075 </y-m>
+	<z-m> -0.224 </z-m>
+	<pitch-deg> -61 </pitch-deg>
+  </offsets>
+</model>
+
+<animation>
+  <type>rotate</type>
+  <object-name>throttleG</object-name>
+  <property>controls/engines/engine/throttle</property>
+  <factor> 105 </factor>
+  <center>
+	<x-m>  0.427</x-m>
+	<y-m>  0.000</y-m>
+	<z-m> -0.311</z-m>
+  </center>
+  <axis>
+	<x>  0 </x>
+	<y> -1 </y>
+	<z>  0 </z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>throttleD</object-name>
+  <property>controls/engines/engine[1]/throttle</property>
+  <factor> 105 </factor>
+  <center>
+	<x-m> 0.427</x-m>
+	<y-m> 0.000</y-m>
+	<z-m>-0.311</z-m>
+  </center>
+  <axis>
+	<x>  0 </x>
+	<y> -1 </y>
+	<z>  0 </z>
+  </axis>
+</animation>
+
 </PropertyList>
