@@ -128,6 +128,7 @@
     </erj145>
     <efis>
       <file>Aircraft/Embraer-ERJ-145/Nasal/P1000.nas</file>
+      <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/pfd/PFD.nas</file>
     </efis>
       <rmu>
          <file>Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/frequencies.nas</file>
