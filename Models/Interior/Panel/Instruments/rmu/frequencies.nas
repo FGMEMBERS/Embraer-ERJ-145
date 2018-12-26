@@ -5,8 +5,14 @@ var canvas_frequencies = {
 		m.group = canvasGroup;
 		m.Instance = instance;
 		m.Id = instance;
+		m.ActiveRect = 0;
+		m.NextFreeCom = 0;
+		m.NextFreeNav = 0;
+		m.MemPosCom = -1;
+		m.MemPosNav = -1;
 		m.Step = 0;
-		m.Tmp = 0;
+		m.Tmp1 = 0;
+		m.Tmp2 = 0;
 
 		var font_mapper = func(family, weight)
 		{
@@ -26,7 +32,7 @@ var canvas_frequencies = {
 		}
 
 		var svg_rects = ["comStbyRect","navStbyRect","trspCodeRect",
-				"adfRect","trspModeRect"];
+				"adfRect","trspModeRect","comMemRect","navMemRect"];
 		for(i=0; i<size(svg_rects); i+=1) {
 			m.rects[i] = canvasGroup.getElementById(svg_rects[i]);
 		}
@@ -69,14 +75,14 @@ var canvas_frequencies = {
 		me.ActiveRect = input;
 	},
 	update: func() {
-		me.Id = me.Instance;
-		var offsideId = 0;
-		if(me.Id == 0) {
-			offsideId = 1;
-		}
-
 		if(getprop("instrumentation/rmu["~me.Instance~"]/offside")) {
 			# this rmu controlls offside system
+			if(me.Instance == 0) {
+				me.Id = 1;
+			}
+			else {
+				me.Id = 0;
+			}
 			me.com.setColor(magenta);
 			me.comNum.setColor(magenta);
 			me.nav.setColor(magenta);
@@ -97,11 +103,11 @@ var canvas_frequencies = {
 			me.tcasNum.setColor(magenta);
 			me.mls.setColor(magenta);
 			me.mlsNum.setColor(magenta);
-
-			me.Id = offsideId;
 		}
 		else {
 			# normal mode
+			me.Id = me.Instance;
+
 			me.com.setColor(white);
 			me.comNum.setColor(white);
 			me.nav.setColor(white);
@@ -130,8 +136,48 @@ var canvas_frequencies = {
 		me.tcasNum.setText(sprintf("%d",me.Id+1));
 		me.mlsNum.setText(sprintf("%d",me.Id+1));
 		me.trspNum.setText("1");
-		me.memCom.setText("MEMORY-1");
-		me.memNav.setText("MEMORY-1");
+
+		# get memory locations comm
+		me.Tmp1 = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
+		me.NextFreeCom = -1;
+		for(me.Step = 0; me.Step < 12; me.Step+=1) {
+			me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.Step~"]") or 0;
+
+			if(me.Tmp2 == me.Tmp1) {
+				# get memory location
+				me.NextFreeCom = -1; # disable sto button
+				me.MemPosCom = me.Step;
+				me.memCom.setText(sprintf("MEMORY-%d",me.Step+1));
+				break;
+			}
+			elsif(me.Tmp2 == 0 and me.NextFreeCom == -1) {
+				# get next free memory location
+				me.NextFreeCom = me.Step;
+				me.MemPosCom = me.Step;
+				me.memCom.setText(sprintf("TEMP-%d",me.NextFreeCom+1));
+			}
+		}
+
+		# get memory locations nav
+		me.Tmp1 = getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz");
+		me.NextFreeNav = -1;
+		for(me.Step = 0; me.Step < 12; me.Step+=1) {
+			me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.Step~"]") or 0;
+
+			if(me.Tmp2 == me.Tmp1) {
+				# get memory location
+				me.NextFreeNav = -1; # disable sto button
+				me.MemPosNav = me.Step;
+				me.memNav.setText(sprintf("MEMORY-%d",me.Step+1));
+				break;
+			}
+			elsif(me.Tmp2 == 0 and me.NextFreeNav == -1) {
+				# get next free memory location
+				me.NextFreeNav = me.Step;
+				me.MemPosNav = me.Step;
+				me.memNav.setText(sprintf("TEMP-%d",me.NextFreeNav+1));
+			}
+		}
 
 		me.comFreq.setText(sprintf("%.2f",getprop("instrumentation/comm["~me.Id~"]/frequencies/selected-mhz")));
 		me.comStby.setText(sprintf("%.2f",getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz")));
@@ -167,10 +213,20 @@ var canvas_frequencies = {
 			setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", sel);
 		}
 		if(input == 2) {
-			me.ActivateRect(0);
+			if(me.ActiveRect == 0) {
+				me.ActivateRect(5);
+			}
+			else {
+				me.ActivateRect(0);
+			}
 		}
 		if(input == 3) {
-			me.ActivateRect(1);
+			if(me.ActiveRect == 1) {
+				me.ActivateRect(6);
+			}
+			else {
+				me.ActivateRect(1);
+			}
 		}
 		if(input == 4) {
 			me.ActivateRect(2);
@@ -179,12 +235,23 @@ var canvas_frequencies = {
 			me.ActivateRect(3);
 		}
 		if(input == 14) {
-			var offside = getprop("instrumentation/rmu["~me.Instance~"]/offside");
-			if(offside) {
+			me.Tmp1 = getprop("instrumentation/rmu["~me.Instance~"]/offside") or 0;
+			if(me.Tmp1) {
 				setprop("instrumentation/rmu["~me.Instance~"]/offside", 0);
 			}
 			else {
 				setprop("instrumentation/rmu["~me.Instance~"]/offside", 1);
+			}
+		}
+		if(input == 15) {
+			if((me.ActiveRect == 0 or me.ActiveRect == 5) and me.NextFreeCom > -1) {
+				me.Tmp1 = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
+				setprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.NextFreeCom~"]", me.Tmp1);
+			}
+
+			if((me.ActiveRect == 1 or me.ActiveRect == 6) and me.NextFreeNav > -1) {
+				me.Tmp1 = getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz");
+				setprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.NextFreeNav~"]", me.Tmp1);
 			}
 		}
 		if(input == 17) {
@@ -197,43 +264,118 @@ var canvas_frequencies = {
 
 		if(me.ActiveRect == 0) {
 			if(index == 1) {
-				#step = 0.025;#wide
-				me.Step = 0.05;#narrow
+				me.Step = 0.05;
 			}
-			me.Tmp = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
-			me.Tmp += me.Step * input;
+			me.Tmp1 = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
+			me.Tmp1 += me.Step * input;
 
-			if(me.Tmp >= 117.975 and me.Tmp <= 137) {
-				setprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz", me.Tmp);
+			if(me.Tmp1 >= 117.975 and me.Tmp1 <= 137) {
+				setprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz", me.Tmp1);
 			}
 		}
-		if(me.ActiveRect == 1) {
+		elsif(me.ActiveRect == 1) {
 			if(index == 1) {
-				#step = 0.025;#wide
-				me.Step = 0.05;#narrow
+				me.Step = 0.05;
 			}
-			me.Tmp = getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz");
-			me.Tmp += me.Step * input;
+			me.Tmp1 = getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz");
+			me.Tmp1 += me.Step * input;
 
-			if(me.Tmp >= 108 and me.Tmp <= 117.95) {
-				setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", me.Tmp);
+			if(me.Tmp1 >= 108 and me.Tmp1 <= 117.95) {
+				setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", me.Tmp1);
 			}
 		}
-		if(me.ActiveRect == 3) {
+		elsif(me.ActiveRect == 3) {
 			if(index == 0) {
 				me.Step = 100;
 			}
-			me.Tmp = getprop("instrumentation/adf["~me.Id~"]/frequencies/selected-khz");
-			me.Tmp += me.Step * input;
+			me.Tmp1 = getprop("instrumentation/adf["~me.Id~"]/frequencies/selected-khz");
+			me.Tmp1 += me.Step * input;
 
-			if(me.Tmp >= 180 and me.Tmp <= 1750) {
-				setprop("instrumentation/adf["~me.Id~"]/frequencies/selected-khz", me.Tmp);
+			if(me.Tmp1 >= 180 and me.Tmp1 <= 1750) {
+				setprop("instrumentation/adf["~me.Id~"]/frequencies/selected-khz", me.Tmp1);
+			}
+		}
+		elsif(me.ActiveRect == 5) {
+			if(input > 0) {
+				if(me.MemPosCom < 0) {
+					me.Tmp1 = 0;
+				}
+				else {
+					me.Tmp1 = me.MemPosCom+1;
+				}
+
+				for(me.Step = me.Tmp1; me.Step < 12; me.Step+=1) {
+					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.Step~"]") or 0;
+
+					if(me.Tmp2 > 0) {
+						me.MemPosCom = me.Step;
+						setprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz", me.Tmp2);
+						break;
+					}
+				}
+			}
+			else {
+				if(me.MemPosCom < 0) {
+					me.Tmp1 = 11;
+				}
+				else {
+					me.Tmp1 = me.MemPosCom-1;
+				}
+
+				for(me.Step = me.Tmp1; me.Step >= 0; me.Step-=1) {
+					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.Step~"]") or 0;
+
+					if(me.Tmp2 > 0) {
+						me.MemPosCom = me.Step;
+						setprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz", me.Tmp2);
+						break;
+					}
+				}
+			}
+		}
+		elsif(me.ActiveRect == 6) {
+			if(input > 0) {
+				if(me.MemPosNav < 0) {
+					me.Tmp1 = 0;
+				}
+				else {
+					me.Tmp1 = me.MemPosNav+1;
+				}
+
+				for(me.Step = me.Tmp1; me.Step < 12; me.Step+=1) {
+					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.Step~"]") or 0;
+
+					if(me.Tmp2 > 0) {
+						me.MemPosNav = me.Step;
+						setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", me.Tmp2);
+						break;
+					}
+				}
+			}
+			else {
+				if(me.MemPosNav < 0) {
+					me.Tmp1 = 11;
+				}
+				else {
+					me.Tmp1 = me.MemPosNav-1;
+				}
+
+				for(me.Step = me.Tmp1; me.Step >= 0; me.Step-=1) {
+					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.Step~"]") or 0;
+
+					if(me.Tmp2 > 0) {
+						me.MemPosCom = me.Step;
+						setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", me.Tmp2);
+						break;
+					}
+				}
 			}
 		}
 		me.update();
 	},
 	show: func()
 	{
+		me.update();
 		me.group.show();
 	},
 	hide: func()

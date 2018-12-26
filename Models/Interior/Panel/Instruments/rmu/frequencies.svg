@@ -36,9 +36,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.266831"
-     inkscape:cx="250.82375"
-     inkscape:cy="147.48901"
+     inkscape:zoom="1.7915696"
+     inkscape:cx="143.68188"
+     inkscape:cy="172.05346"
      inkscape:document-units="px"
      inkscape:current-layer="frequencies"
      showgrid="false"
@@ -385,6 +385,18 @@
      inkscape:connector-curvature="0"
      id="comStbyRect"
      d="m 39.5,88.58358 129.41516,0 0,37.91642 -129.41516,0 z"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffd700;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <path
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffd700;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 57.5,132.5 92.5,0 0,20 -92.5,0 z"
+     id="comMemRect"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     sodipodi:nodetypes="ccccc"
+     inkscape:connector-curvature="0"
+     id="navMemRect"
+     d="m 202.5,132.5 92.5,0 0,20 -92.5,0 z"
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffd700;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      sodipodi:nodetypes="ccccc"
