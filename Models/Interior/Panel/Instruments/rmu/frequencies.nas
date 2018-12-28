@@ -1,3 +1,12 @@
+var RectEnum = {comStbyRect:0,
+	navStbyRect:1,
+	trspCodeRect:2,
+	adfRect:3,
+	trspModeRect:4,
+	comMemRect:5,
+	navMemRect:6
+};
+
 var canvas_frequencies = {
 	new: func(canvasGroup, instance)
 	{
@@ -21,11 +30,11 @@ var canvas_frequencies = {
 		canvas.parsesvg(canvasGroup, "Aircraft/Embraer-ERJ-145/Models/Interior/Panel/Instruments/rmu/frequencies.svg", {'font-mapper': font_mapper});
 
 		var svg_keys = ["comFreq","navFreq","comStby", "navStby",
-				"trspCode","trspMode","trspNum","adfFreq",
+				"atc","trspCode","trspMode","atcId","atcOnline",
 				"memCom","memNav",
 				"com","comNum","nav","navNum",
-				"atc","adf1","adfNum",
-				"tcas","tcasNum","tcasDsp",
+				"adf1","adfNum","adfFreq",
+				"tcas","tcasNum","tcasDsp","tcasRange",
 				"mls","mlsNum","mlsDsp"];
 		foreach(var key; svg_keys) {
 			m[key] = canvasGroup.getElementById(key);
@@ -37,7 +46,8 @@ var canvas_frequencies = {
 			m.rects[i] = canvasGroup.getElementById(svg_rects[i]);
 		}
 
-		m.ActivateRect(0);
+		m.ActivateRect(RectEnum.comStbyRect);
+		m.tcasRange.setText("6");
 		m.listen();
 		m.update();
 		return m;
@@ -62,14 +72,17 @@ var canvas_frequencies = {
 		setlistener("instrumentation/nav[1]/frequencies/standby-mhz", func{ me.update() });
 		setlistener("instrumentation/adf[0]/frequencies/selected-khz", func{ me.update() });
 		setlistener("instrumentation/adf[1]/frequencies/selected-khz", func{ me.update() });
+		setlistener("instrumentation/transponder/id-code", func{ me.update() });
+		setlistener("sim/multiplay/callsign", func{ me.update() });
+		setlistener("sim/multiplay/online", func{ me.update() });
 	},
 	ActivateRect: func(input = -1) {
-		for(i=0; i<size(me.rects); i=i+1) {
-			if(input == i) {
-				me.rects[i].show();
+		for(me.Tmp1=0; me.Tmp1 < size(me.rects); me.Tmp1+=1) {
+			if(input == me.Tmp1) {
+				me.rects[me.Tmp1].show();
 			}
 			else {
-				me.rects[i].hide();
+				me.rects[me.Tmp1].hide();
 			}
 		}
 		me.ActiveRect = input;
@@ -135,7 +148,6 @@ var canvas_frequencies = {
 		me.adfNum.setText(sprintf("%d",me.Id+1));
 		me.tcasNum.setText(sprintf("%d",me.Id+1));
 		me.mlsNum.setText(sprintf("%d",me.Id+1));
-		me.trspNum.setText("1");
 
 		# get memory locations comm
 		me.Tmp1 = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
@@ -184,6 +196,15 @@ var canvas_frequencies = {
 		me.navFreq.setText(sprintf("%.2f",getprop("instrumentation/nav["~me.Id~"]/frequencies/selected-mhz")));
 		me.navStby.setText(sprintf("%.2f",getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz")));
 		me.adfFreq.setText(sprintf("%d",getprop("instrumentation/adf["~me.Id~"]/frequencies/selected-khz")));
+		me.trspCode.setText(sprintf("%04d",getprop("instrumentation/transponder/id-code")));
+		me.atcId.setText(getprop("sim/multiplay/callsign"));
+
+		if(getprop("sim/multiplay/online") or 0) {
+			me.atcOnline.show();
+		}
+		else {
+			me.atcOnline.hide();
+		}
 
 		if(getprop("instrumentation/rmu["~me.Id~"]/mlsDsp") or 0) {
 			me.mlsDsp.show();
@@ -213,26 +234,26 @@ var canvas_frequencies = {
 			setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", sel);
 		}
 		if(input == 2) {
-			if(me.ActiveRect == 0) {
-				me.ActivateRect(5);
+			if(me.ActiveRect == RectEnum.comStbyRect) {
+				me.ActivateRect(RectEnum.comMemRect);
 			}
 			else {
-				me.ActivateRect(0);
+				me.ActivateRect(RectEnum.comStbyRect);
 			}
 		}
 		if(input == 3) {
-			if(me.ActiveRect == 1) {
-				me.ActivateRect(6);
+			if(me.ActiveRect == RectEnum.navStbyRect) {
+				me.ActivateRect(RectEnum.navMemRect);
 			}
 			else {
-				me.ActivateRect(1);
+				me.ActivateRect(RectEnum.navStbyRect);
 			}
 		}
 		if(input == 4) {
-			me.ActivateRect(2);
+			me.ActivateRect(RectEnum.trspCodeRect);
 		}
 		if(input == 5) {
-			me.ActivateRect(3);
+			me.ActivateRect(RectEnum.adfRect);
 		}
 		if(input == 14) {
 			me.Tmp1 = getprop("instrumentation/rmu["~me.Instance~"]/offside") or 0;
@@ -262,7 +283,7 @@ var canvas_frequencies = {
 	Knob: func(index = -1, input = -1) {
 		me.Step = 1;
 
-		if(me.ActiveRect == 0) {
+		if(me.ActiveRect == RectEnum.comStbyRect) {
 			if(index == 1) {
 				me.Step = 0.05;
 			}
@@ -273,7 +294,7 @@ var canvas_frequencies = {
 				setprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz", me.Tmp1);
 			}
 		}
-		elsif(me.ActiveRect == 1) {
+		elsif(me.ActiveRect == RectEnum.navStbyRect) {
 			if(index == 1) {
 				me.Step = 0.05;
 			}
@@ -284,7 +305,18 @@ var canvas_frequencies = {
 				setprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz", me.Tmp1);
 			}
 		}
-		elsif(me.ActiveRect == 3) {
+		elsif(me.ActiveRect == RectEnum.trspCodeRect) {
+			if(index == 0) {
+				me.Step = 100;
+			}
+			me.Tmp1 = getprop("instrumentation/transponder/id-code");
+			me.Tmp1 += me.Step * input;
+
+			if(me.Tmp1 >= 0 and me.Tmp1 <= 9999) {
+				setprop("instrumentation/transponder/id-code", me.Tmp1);
+			}
+		}
+		elsif(me.ActiveRect == RectEnum.adfRect) {
 			if(index == 0) {
 				me.Step = 100;
 			}
@@ -295,7 +327,7 @@ var canvas_frequencies = {
 				setprop("instrumentation/adf["~me.Id~"]/frequencies/selected-khz", me.Tmp1);
 			}
 		}
-		elsif(me.ActiveRect == 5) {
+		elsif(me.ActiveRect == RectEnum.comMemRect) {
 			if(input > 0) {
 				if(me.MemPosCom < 0) {
 					me.Tmp1 = 0;
@@ -333,7 +365,7 @@ var canvas_frequencies = {
 				}
 			}
 		}
-		elsif(me.ActiveRect == 6) {
+		elsif(me.ActiveRect == RectEnum.navMemRect) {
 			if(input > 0) {
 				if(me.MemPosNav < 0) {
 					me.Tmp1 = 0;

@@ -4,6 +4,8 @@ var canvas_atctcas = {
 		var m = { parents: [canvas_atctcas], fltid_data:{} };
 		m.group = canvasGroup;
 		m.Instance = instance;
+		m.Tmp = 0;
+		m.Text = 0;
 
 		var font_mapper = func(family, weight)
 		{
@@ -48,61 +50,61 @@ var canvas_atctcas = {
 		}
 		else {
 			# inner wheel
-			var character = me.fltid_data[me.fltid_index] or 32;
-			var output = "";
+			me.Tmp = me.fltid_data[me.fltid_index] or 32;
+			me.Text = "";
 
 			if(input > 0) {
 				# right turn
-				if(character == 32) {
+				if(me.Tmp == 32) {
 					# space -> 0
-					character = 48;
+					me.Tmp = 48;
 				}
-				else if(character == 57) {
+				else if(me.Tmp == 57) {
 					# 9 -> A
-					character = 65;
+					me.Tmp = 65;
 				}
-				else if(character == 90) {
+				else if(me.Tmp == 90) {
 					# Z -> back to 0 or space if last char
 					if(me.fltid_index == me.fltid_size-1) {
-						character = 32;
+						me.Tmp = 32;
 						me.fltid_size = me.fltid_size-1;
 					}
 					else {
-						character = 48;
+						me.Tmp = 48;
 					}
 				}
 				else {
 					# normal increase
-					character = character+1;
+					me.Tmp = me.Tmp+1;
 				}
 			}
 			else {
 				# left turn
-				if(character == 32) {
+				if(me.Tmp == 32) {
 					# space -> Z
-					character = 90;
+					me.Tmp = 90;
 				}
-				else if(character == 65) {
+				else if(me.Tmp == 65) {
 					# A -> 9
-					character = 57;
+					me.Tmp = 57;
 				}
-				else if(character == 48) {
+				else if(me.Tmp == 48) {
 					# 0 -> back to Z or space if last char
 					if(me.fltid_index == me.fltid_size-1) {
-						character = 32;
+						me.Tmp = 32;
 						me.fltid_size = me.fltid_size-1;
 					}
 					else {
-						character = 90;
+						me.Tmp = 90;
 					}
 				}
 				else {
 					# normal decrease
-					character = character-1;
+					me.Tmp = me.Tmp-1;
 				}
 			}
 
-			me.fltid_data[me.fltid_index] = character;
+			me.fltid_data[me.fltid_index] = me.Tmp;
 
 			# increase buffer if new position
 			if(me.fltid_index == me.fltid_size) {
@@ -112,11 +114,11 @@ var canvas_atctcas = {
 				}
 			}
 
-			for(var i=0; i<me.fltid_size; i=i+1) {
-				output=output~chr(me.fltid_data[i]);
+			for(me.Tmp=0; me.Tmp < me.fltid_size; me.Tmp+=1) {
+				me.Text=me.Text~chr(me.fltid_data[me.Tmp]);
 			}
 
-			me.fltid_text.setText(output);
+			me.fltid_text.setText(me.Text);
 		}
 	},
 	show: func()
