@@ -20,14 +20,6 @@ var canvas_memorycom = {
 			m["rect"~(m.Counter)] = canvasGroup.getElementById("rect"~(m.Counter+1));
 			m["mem"~(m.Counter)] = canvasGroup.getElementById("mem"~(m.Counter+1));
 			m["n"~(m.Counter)] = canvasGroup.getElementById("n"~(m.Counter+1));
-
-			m.Tmp = getprop("instrumentation/rmu/memory/comm/mem["~m.Counter~"]") or 0;
-			if(m.Tmp > 100) {
-				m["mem"~m.Counter].setText(sprintf("%.2f", m.Tmp));
-			}
-			else {
-				m["mem"~m.Counter].setText("");
-			}
 		}
 		m.comFreq = canvasGroup.getElementById("comFreq");
 

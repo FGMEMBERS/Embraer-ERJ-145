@@ -153,7 +153,7 @@ var canvas_frequencies = {
 		me.Tmp1 = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
 		me.NextFreeCom = -1;
 		for(me.Step = 0; me.Step < 12; me.Step+=1) {
-			me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.Step~"]") or 0;
+			me.Tmp2 = getprop("instrumentation/rmu/memory/comm/mem["~me.Step~"]") or 0;
 
 			if(me.Tmp2 == me.Tmp1) {
 				# get memory location
@@ -174,7 +174,7 @@ var canvas_frequencies = {
 		me.Tmp1 = getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz");
 		me.NextFreeNav = -1;
 		for(me.Step = 0; me.Step < 12; me.Step+=1) {
-			me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.Step~"]") or 0;
+			me.Tmp2 = getprop("instrumentation/rmu/memory/nav/mem["~me.Step~"]") or 0;
 
 			if(me.Tmp2 == me.Tmp1) {
 				# get memory location
@@ -267,12 +267,12 @@ var canvas_frequencies = {
 		if(input == 15) {
 			if((me.ActiveRect == 0 or me.ActiveRect == 5) and me.NextFreeCom > -1) {
 				me.Tmp1 = getprop("instrumentation/comm["~me.Id~"]/frequencies/standby-mhz");
-				setprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.NextFreeCom~"]", me.Tmp1);
+				setprop("instrumentation/rmu/memory/comm/mem["~me.NextFreeCom~"]", me.Tmp1);
 			}
 
 			if((me.ActiveRect == 1 or me.ActiveRect == 6) and me.NextFreeNav > -1) {
 				me.Tmp1 = getprop("instrumentation/nav["~me.Id~"]/frequencies/standby-mhz");
-				setprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.NextFreeNav~"]", me.Tmp1);
+				setprop("instrumentation/rmu/memory/nav/mem["~me.NextFreeNav~"]", me.Tmp1);
 			}
 		}
 		if(input == 17) {
@@ -337,7 +337,7 @@ var canvas_frequencies = {
 				}
 
 				for(me.Step = me.Tmp1; me.Step < 12; me.Step+=1) {
-					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.Step~"]") or 0;
+					me.Tmp2 = getprop("instrumentation/rmu/memory/comm/mem["~me.Step~"]") or 0;
 
 					if(me.Tmp2 > 0) {
 						me.MemPosCom = me.Step;
@@ -355,7 +355,7 @@ var canvas_frequencies = {
 				}
 
 				for(me.Step = me.Tmp1; me.Step >= 0; me.Step-=1) {
-					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/comm/mem["~me.Step~"]") or 0;
+					me.Tmp2 = getprop("instrumentation/rmu/memory/comm/mem["~me.Step~"]") or 0;
 
 					if(me.Tmp2 > 0) {
 						me.MemPosCom = me.Step;
@@ -375,7 +375,7 @@ var canvas_frequencies = {
 				}
 
 				for(me.Step = me.Tmp1; me.Step < 12; me.Step+=1) {
-					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.Step~"]") or 0;
+					me.Tmp2 = getprop("instrumentation/rmu/memory/nav/mem["~me.Step~"]") or 0;
 
 					if(me.Tmp2 > 0) {
 						me.MemPosNav = me.Step;
@@ -393,7 +393,7 @@ var canvas_frequencies = {
 				}
 
 				for(me.Step = me.Tmp1; me.Step >= 0; me.Step-=1) {
-					me.Tmp2 = getprop("instrumentation/rmu["~me.Id~"]/memory/nav/mem["~me.Step~"]") or 0;
+					me.Tmp2 = getprop("instrumentation/rmu/memory/nav/mem["~me.Step~"]") or 0;
 
 					if(me.Tmp2 > 0) {
 						me.MemPosCom = me.Step;
