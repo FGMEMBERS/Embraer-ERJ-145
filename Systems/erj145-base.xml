@@ -16,6 +16,7 @@
 
     <model>
       <path archive="y">Aircraft/Embraer-ERJ-145/Models/erj145.xml</path>
+      <fallback-model-index type="int">214</fallback-model-index>
       <livery>
         <file type="string">default</file>
       </livery>
